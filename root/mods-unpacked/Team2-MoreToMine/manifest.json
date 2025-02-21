@@ -4,10 +4,11 @@
 	"extra": {
 		"godot": {
 			"authors": [
-				"AuthorName"
+				"zimny",
+				"KANA"
 			],
 			"compatible_game_version": [
-				"0.0.1"
+				"4.2.1"
 			],
 			"compatible_mod_loader_version": [
 				"7.0.0"

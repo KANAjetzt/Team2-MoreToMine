@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Team2Globals" load_steps=3 format=3 uid="uid://dw7rfru5qhmuh"]
+
+[ext_resource type="Script" path="res://mods-unpacked/Team2-MoreToMine/data/_scripts/globals.gd" id="1_2huyq"]
+[ext_resource type="Resource" uid="uid://bbe8k5wpm5brj" path="res://mods-unpacked/Team2-MoreToMine/content/drop/copper/copper.tres" id="1_3nmi7"]
+
+[resource]
+script = ExtResource("1_2huyq")
+resources = Array[Resource("res://mods-unpacked/Team2-MoreToMine/data/_scripts/resource.gd")]([ExtResource("1_3nmi7")])
