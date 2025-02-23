@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chuktsyy0onte"
-path="res://.godot/imported/copper_selector2_wide.png-2a8304fac9b7ae2087d2ea8e2472c383.ctex"
+uid="uid://b1nxreilkhm5g"
+path="res://.godot/imported/carried.png-a0b4e09088035743714461e7a240b47e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/Team2-MoreToMine/content/drop/copper/copper_selector2_wide.png"
-dest_files=["res://.godot/imported/copper_selector2_wide.png-2a8304fac9b7ae2087d2ea8e2472c383.ctex"]
+source_file="res://mods-unpacked/Team2-MoreToMine/content/drop/quartz/carried.png"
+dest_files=["res://.godot/imported/carried.png-a0b4e09088035743714461e7a240b47e.ctex"]
 
 [params]
 

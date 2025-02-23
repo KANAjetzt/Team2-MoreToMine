@@ -136,4 +136,3 @@ func destroyTile(chain: ModLoaderHookChain, tile, withDropsAndSound := true):
 #		tileCoordsToReveal.append(tile.coord + d)
 	main_node.tileCoordsToReveal.append(tile.coord)
 	main_node.floodRevealTiles()
-

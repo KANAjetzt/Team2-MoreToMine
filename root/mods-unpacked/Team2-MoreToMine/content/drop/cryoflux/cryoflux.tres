@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Team2ResourceData" load_steps=4 format=3 uid="uid://e4lfrt6fun05"]
+
+[ext_resource type="Script" path="res://mods-unpacked/Team2-MoreToMine/data/_scripts/resource.gd" id="1_4gopt"]
+[ext_resource type="PackedScene" uid="uid://buhasc7jt3fmm" path="res://mods-unpacked/Team2-MoreToMine/content/drop/cryoflux/cryoflux_drop.tscn" id="1_8bg8s"]
+[ext_resource type="Texture2D" uid="uid://dd51k7yoh35j7" path="res://mods-unpacked/Team2-MoreToMine/content/drop/cryoflux/icon_cryoflux.png" id="2_v860x"]
+
+[resource]
+script = ExtResource("1_4gopt")
+tile_id = 43
+tile_string = "team_2_cryoflux"
+icon = ExtResource("2_v860x")
+drop_scene = ExtResource("1_8bg8s")
+resource_sheet_location_center_start = Vector2(5, 9)
+resource_sheet_location_center_end = Vector2(11, 9)
+richness = 1
+drop_min = 1
+drop_max = 3
+spawn_per_layer_max = 3

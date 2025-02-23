@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Team2Globals" load_steps=8 format=3 uid="uid://bxy187mfcwl4i"]
+
+[ext_resource type="Resource" uid="uid://bbe8k5wpm5brj" path="res://mods-unpacked/Team2-MoreToMine/content/drop/copper/copper.tres" id="1_sbi0y"]
+[ext_resource type="Resource" uid="uid://e4lfrt6fun05" path="res://mods-unpacked/Team2-MoreToMine/content/drop/cryoflux/cryoflux.tres" id="2_qwo62"]
+[ext_resource type="Resource" uid="uid://c117qbberlswe" path="res://mods-unpacked/Team2-MoreToMine/content/drop/ionic_dust/ionic_dust.tres" id="3_f70ka"]
+[ext_resource type="Resource" uid="uid://cgaomj4xvq7ye" path="res://mods-unpacked/Team2-MoreToMine/content/drop/quartz/quartz.tres" id="4_s308u"]
+[ext_resource type="Resource" uid="uid://dui6w3ds2shsf" path="res://mods-unpacked/Team2-MoreToMine/content/drop/ruby/ruby.tres" id="5_slyol"]
+[ext_resource type="Resource" uid="uid://bx6hsyr68t3ds" path="res://mods-unpacked/Team2-MoreToMine/content/drop/tungsten/tungsten.tres" id="6_5ng05"]
+[ext_resource type="Script" path="res://mods-unpacked/Team2-MoreToMine/data/_scripts/globals.gd" id="7_g51ct"]
+
+[resource]
+script = ExtResource("7_g51ct")
+resources = Array[Resource("res://mods-unpacked/Team2-MoreToMine/data/_scripts/resource.gd")]([ExtResource("1_sbi0y"), ExtResource("2_qwo62"), ExtResource("3_f70ka"), ExtResource("4_s308u"), ExtResource("5_slyol"), ExtResource("6_5ng05")])

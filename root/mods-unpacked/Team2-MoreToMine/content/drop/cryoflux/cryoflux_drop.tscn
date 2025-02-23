@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://buhasc7jt3fmm"]
+
+[ext_resource type="PackedScene" uid="uid://cndiyiean38ms" path="res://content/drop/MineralDrop.tscn" id="1_00rb4"]
+[ext_resource type="Texture2D" uid="uid://dfvn43rb4y0nt" path="res://mods-unpacked/Team2-MoreToMine/content/drop/cryoflux/cryoflux_smol.png" id="2_c7ot6"]
+[ext_resource type="Texture2D" uid="uid://ckd6gn5m7ik8l" path="res://mods-unpacked/Team2-MoreToMine/content/drop/cryoflux/carried.png" id="3_45f5m"]
+[ext_resource type="Texture2D" uid="uid://bvpifefeg03lv" path="res://mods-unpacked/Team2-MoreToMine/content/drop/cryoflux/focussed.png" id="4_60ry7"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8iijk"]
+resource_local_to_scene = true
+friction = 0.6
+bounce = 0.25
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7bu7"]
+size = Vector2(10, 10)
+
+[node name="CryofluxDrop" instance=ExtResource("1_00rb4")]
+physics_material_override = SubResource("PhysicsMaterial_8iijk")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_c7ot6")
+
+[node name="CarrySprite" parent="." index="1"]
+texture = ExtResource("3_45f5m")
+
+[node name="FocusSprite" parent="." index="2"]
+texture = ExtResource("4_60ry7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="5"]
+shape = SubResource("RectangleShape2D_x7bu7")

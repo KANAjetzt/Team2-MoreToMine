@@ -1,29 +1,39 @@
-[gd_scene load_steps=7 format=3 uid="uid://hc8moa1hfya"]
+[gd_scene load_steps=8 format=3 uid="uid://hc8moa1hfya"]
 
 [ext_resource type="PackedScene" uid="uid://cndiyiean38ms" path="res://content/drop/MineralDrop.tscn" id="1_0pd8a"]
-[ext_resource type="Texture2D" uid="uid://bark8ffgmm1tj" path="res://mods-unpacked/Team2-MoreToMine/content/drop/copper/copper_smol.png" id="2_skcqp"]
-[ext_resource type="Texture2D" uid="uid://cl7n2caxkclx3" path="res://mods-unpacked/Team2-MoreToMine/content/drop/copper/copper_carried.png" id="3_ju53l"]
-[ext_resource type="Texture2D" uid="uid://kn07crhm57cf" path="res://mods-unpacked/Team2-MoreToMine/content/drop/copper/copper_selector2.png" id="4_bphb1"]
+[ext_resource type="Texture2D" uid="uid://ljbw0a5vkpj5" path="res://mods-unpacked/Team2-MoreToMine/content/drop/copper/copper_smol.png" id="2_skcqp"]
+[ext_resource type="PackedScene" uid="uid://1olcox7jq6mr" path="res://mods-unpacked/Team2-MoreToMine/content/drop/copper/copper_shred_particles.tscn" id="3_sq2r1"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_76bw5"]
 resource_local_to_scene = true
 friction = 0.6
 bounce = 0.25
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gdfgl"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3dqpt"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yunos"]
 size = Vector2(8, 8)
 
-[node name="MineralDrop" instance=ExtResource("1_0pd8a")]
+[node name="CopperDrop" instance=ExtResource("1_0pd8a")]
 physics_material_override = SubResource("PhysicsMaterial_76bw5")
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_skcqp")
 
 [node name="CarrySprite" parent="." index="1"]
-texture = ExtResource("3_ju53l")
+texture = SubResource("CompressedTexture2D_gdfgl")
 
 [node name="FocusSprite" parent="." index="2"]
-texture = ExtResource("4_bphb1")
+texture = SubResource("CompressedTexture2D_3dqpt")
+
+[node name="DropEnterTrigger" parent="." index="3"]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="5"]
+visible = false
 shape = SubResource("RectangleShape2D_yunos")
+
+[node name="ShredParticles" parent="." index="6" instance=ExtResource("3_sq2r1")]
+visible = false

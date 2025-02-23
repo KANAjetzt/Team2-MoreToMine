@@ -1,16 +1,15 @@
 extends Object
 
-const CONSTARRC = preload("res://mods-unpacked/Arrcival-DiamondUpgrades/Consts.gd")
-
 
 func _ready(chain: ModLoaderHookChain):
 	chain.execute_next()
 
 	var main_node : Node = chain.reference_object
+	var res_sprite: Sprite2D = main_node.res_sprite
 
-	if main_node.res_sprite:
-		main_node.res_sprite.texture = load("res://mods-unpacked/Team2-MoreToMine/content/map/border/resources_sheet.png")
-		Style.init(main_node.res_sprite)
+	if res_sprite:
+		res_sprite.texture = load("res://mods-unpacked/Team2-MoreToMine/content/map/border/resources_sheet.png")
+		#Style.init(res_sprite)
 
 
 func setType(chain: ModLoaderHookChain, type:String):
@@ -27,7 +26,12 @@ func setType(chain: ModLoaderHookChain, type:String):
 			var baseHealth:float = Data.of("map.tileBaseHealth")
 
 			main_node.set_meta("destructable", true)
-			main_node.initResourceSprite(Vector2(4, 4))
+			main_node.initResourceSprite(
+				Vector2(
+					randi_range(resource.resource_sheet_location_center_start.x, resource.resource_sheet_location_center_end.x),
+					randi_range(resource.resource_sheet_location_center_start.y, resource.resource_sheet_location_center_end.y)
+				)
+			)
 			baseHealth += Data.of("map.sandAdditionalHealth")
 
 			var healthMultiplier:float = 1.0

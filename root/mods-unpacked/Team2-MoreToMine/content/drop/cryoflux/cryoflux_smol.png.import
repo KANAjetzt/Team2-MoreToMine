@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v1f854hsqfsa"
-path="res://.godot/imported/resources_sheet.png-f3091393b22f97d58760970a8477f290.ctex"
+uid="uid://dfvn43rb4y0nt"
+path="res://.godot/imported/cryoflux_smol.png-dffcc1b883ec95d6ef5dbb5143780fda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/Team2-MoreToMine/content/map/border/resources_sheet.png"
-dest_files=["res://.godot/imported/resources_sheet.png-f3091393b22f97d58760970a8477f290.ctex"]
+source_file="res://mods-unpacked/Team2-MoreToMine/content/drop/cryoflux/cryoflux_smol.png"
+dest_files=["res://.godot/imported/cryoflux_smol.png-dffcc1b883ec95d6ef5dbb5143780fda.ctex"]
 
 [params]
 

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Team2ResourceData" load_steps=4 format=3 uid="uid://bx6hsyr68t3ds"]
+
+[ext_resource type="PackedScene" uid="uid://0s4igw6o8kl3" path="res://mods-unpacked/Team2-MoreToMine/content/drop/tungsten/tungsten_drop.tscn" id="1_cnx4n"]
+[ext_resource type="Script" path="res://mods-unpacked/Team2-MoreToMine/data/_scripts/resource.gd" id="1_raipd"]
+[ext_resource type="Texture2D" uid="uid://drcyq02oypyw7" path="res://mods-unpacked/Team2-MoreToMine/content/drop/tungsten/icon_tungsten.png" id="2_gks28"]
+
+[resource]
+script = ExtResource("1_raipd")
+tile_id = 47
+tile_string = "team_2_tungsten"
+icon = ExtResource("2_gks28")
+drop_scene = ExtResource("1_cnx4n")
+resource_sheet_location_center_start = Vector2(5, 0)
+resource_sheet_location_center_end = Vector2(11, 0)
+richness = 1
+drop_min = 1
+drop_max = 3
+spawn_per_layer_max = 3

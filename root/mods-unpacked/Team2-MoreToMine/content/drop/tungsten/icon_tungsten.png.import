@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v1f854hsqfsa"
-path="res://.godot/imported/resources_sheet.png-f3091393b22f97d58760970a8477f290.ctex"
+uid="uid://drcyq02oypyw7"
+path="res://.godot/imported/icon_tungsten.png-8e2ce1047c1e7feef56227e57f7131ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/Team2-MoreToMine/content/map/border/resources_sheet.png"
-dest_files=["res://.godot/imported/resources_sheet.png-f3091393b22f97d58760970a8477f290.ctex"]
+source_file="res://mods-unpacked/Team2-MoreToMine/content/drop/tungsten/icon_tungsten.png"
+dest_files=["res://.godot/imported/icon_tungsten.png-8e2ce1047c1e7feef56227e57f7131ca.ctex"]
 
 [params]
 

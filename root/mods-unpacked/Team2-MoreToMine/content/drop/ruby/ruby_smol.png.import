@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kn07crhm57cf"
-path="res://.godot/imported/copper_selector2.png-7c3a92f9d5807e1e23cb3d6c405094a5.ctex"
+uid="uid://cqfo2lqrwy346"
+path="res://.godot/imported/ruby_smol.png-4a6a036c49051017ece716f38f3aa9fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/Team2-MoreToMine/content/drop/copper/copper_selector2.png"
-dest_files=["res://.godot/imported/copper_selector2.png-7c3a92f9d5807e1e23cb3d6c405094a5.ctex"]
+source_file="res://mods-unpacked/Team2-MoreToMine/content/drop/ruby/ruby_smol.png"
+dest_files=["res://.godot/imported/ruby_smol.png-4a6a036c49051017ece716f38f3aa9fa.ctex"]
 
 [params]
 

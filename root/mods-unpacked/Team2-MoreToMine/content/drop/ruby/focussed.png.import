@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v1f854hsqfsa"
-path="res://.godot/imported/resources_sheet.png-f3091393b22f97d58760970a8477f290.ctex"
+uid="uid://7o24x64kclai"
+path="res://.godot/imported/focussed.png-59d1505c595db3778bfb8ee864bfde1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/Team2-MoreToMine/content/map/border/resources_sheet.png"
-dest_files=["res://.godot/imported/resources_sheet.png-f3091393b22f97d58760970a8477f290.ctex"]
+source_file="res://mods-unpacked/Team2-MoreToMine/content/drop/ruby/focussed.png"
+dest_files=["res://.godot/imported/focussed.png-59d1505c595db3778bfb8ee864bfde1c.ctex"]
 
 [params]
 
