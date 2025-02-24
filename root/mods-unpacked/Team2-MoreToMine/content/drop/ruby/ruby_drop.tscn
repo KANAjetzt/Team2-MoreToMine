@@ -14,10 +14,11 @@ bounce = 0.25
 radius = 3.0
 height = 14.0
 
-[node name="RubyDrop" instance=ExtResource("1_sk20d")]
+[node name="RubyDrop" groups=["unstyled"] instance=ExtResource("1_sk20d")]
 physics_material_override = SubResource("PhysicsMaterial_g1aui")
 
 [node name="Sprite2D" parent="." index="0"]
+material = null
 texture = ExtResource("2_vbpok")
 
 [node name="CarrySprite" parent="." index="1"]

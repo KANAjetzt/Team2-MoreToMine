@@ -10,10 +10,11 @@ resource_local_to_scene = true
 friction = 0.6
 bounce = 0.25
 
-[node name="QuartzDrop" instance=ExtResource("1_7q1tc")]
+[node name="QuartzDrop" groups=["unstyled"] instance=ExtResource("1_7q1tc")]
 physics_material_override = SubResource("PhysicsMaterial_x38rf")
 
 [node name="Sprite2D" parent="." index="0"]
+material = null
 texture = ExtResource("2_uippm")
 
 [node name="CarrySprite" parent="." index="1"]
