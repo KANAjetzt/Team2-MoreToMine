@@ -29,54 +29,64 @@ func revealTile(chain: ModLoaderHookChain, coord:Vector2):
 	var main_node : Node = chain.reference_object
 	var mod_node := main_node.get_node("/root/ModLoader/Team2-MoreToMine")
 	var globals: Team2Globals = mod_node.globals
-
-	chain.execute_next([coord])
-
-	var invalids := []
-
-	if main_node.tileRevealedListeners.has(coord):
-		for listener in main_node.tileRevealedListeners[coord]:
-			if is_instance_valid(listener):
-				listener.tileRevealed(coord)
-			else:
-				invalids.append(listener)
-		for invalid in invalids:
-			main_node.tileRevealedListeners.erase(invalid)
+	var is_modded_resource := false
 
 	var typeId:int = main_node.tileData.get_resource(coord.x, coord.y)
-	if typeId == Data.TILE_EMPTY:
-		return
 
-	if main_node.tiles.has(coord):
-		return
-
-	var tile = main_node.tile_scene.instantiate()
-	var biomeId:int = main_node.tileData.get_biome(coord.x, coord.y)
-	tile.layer = biomeId
-	tile.biome = main_node.biomes[tile.layer]
-	tile.position = coord * GameWorld.TILE_SIZE
-	tile.coord = coord
-	tile.hardness = main_node.tileData.get_hardness(coord.x, coord.y)
-	tile.type = Data.TILE_ID_TO_STRING_MAP.get(typeId, "dirt")
-
-	# !! MODDED CODE START !! #
 	for resource in globals.resources:
-		if resource.tile_string == tile.type:
-			tile.richness = resource.richness
-			main_node.revealTileVisually(coord)
-	# !! MODDED CODE END !! #
+		if resource.tile_id == typeId:
+			is_modded_resource = true
 
+	if is_modded_resource:
+		var invalids := []
 
-	main_node.tiles[coord] = tile
+		if main_node.tileRevealedListeners.has(coord):
+			for listener in main_node.tileRevealedListeners[coord]:
+				if is_instance_valid(listener):
+					listener.tileRevealed(coord)
+				else:
+					invalids.append(listener)
+			for invalid in invalids:
+				main_node.tileRevealedListeners.erase(invalid)
 
-	if main_node.tilesByType.has(tile.type):
-		main_node.tilesByType[tile.type].append(tile)
-	tile.destroyed.connect(main_node.destroyTile.bind(tile))
+		if typeId == Data.TILE_EMPTY:
+			return
 
-	main_node.tiles_node.add_child(tile)
+		if main_node.tiles.has(coord):
+			return
 
-	# Allow border tiles to fade correctly at edges of the map
-	main_node.visibleTileCoords[coord] = typeId
+		var tile: Tile = main_node.tile_scene.instantiate()
+		var biomeId:int = main_node.tileData.get_biome(coord.x, coord.y)
+		tile.layer = biomeId
+		tile.biome = main_node.biomes[tile.layer]
+		tile.position = coord * GameWorld.TILE_SIZE
+		tile.coord = coord
+		tile.hardness = main_node.tileData.get_hardness(coord.x, coord.y)
+		tile.type = Data.TILE_ID_TO_STRING_MAP.get(typeId, "dirt")
+
+		# !! MODDED CODE START !! #
+		for resource in globals.resources:
+			if resource.tile_string == tile.type:
+				tile.richness = resource.richness
+				main_node.revealTileVisually(coord)
+		# !! MODDED CODE END !! #
+
+		main_node.tiles[coord] = tile
+
+		if main_node.tilesByType.has(tile.type):
+			main_node.tilesByType[tile.type].append(tile)
+		tile.destroyed.connect(main_node.destroyTile.bind(tile))
+
+		main_node.tiles_node.add_child(tile)
+		# !! MODDED CODE START !! #
+		tile.res_sprite.add_to_group("unstyled")
+		tile.res_sprite.material = null
+		# !! MODDED CODE END !! #
+
+		# Allow border tiles to fade correctly at edges of the map
+		main_node.visibleTileCoords[coord] = typeId
+
+	chain.execute_next([coord])
 
 
 func destroyTile(chain: ModLoaderHookChain, tile, withDropsAndSound := true):
