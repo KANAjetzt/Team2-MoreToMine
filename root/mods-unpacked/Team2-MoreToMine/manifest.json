@@ -1,9 +1,10 @@
 {
 	"dependencies": [],
-	"description": "Description of your mod...",
+	"description": "Adds more resources and crafting.",
 	"extra": {
 		"godot": {
 			"authors": [
+				"flamedash",
 				"zimny",
 				"KANA"
 			],
