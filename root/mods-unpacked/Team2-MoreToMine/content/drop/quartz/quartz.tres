@@ -1,17 +1,17 @@
 [gd_resource type="Resource" script_class="Team2ResourceData" load_steps=4 format=3 uid="uid://cgaomj4xvq7ye"]
 
-[ext_resource type="PackedScene" uid="uid://b5k15dvjs8ghr" path="res://mods-unpacked/Team2-MoreToMine/content/drop/ionic_dust/ionic_dust_drop.tscn" id="1_lw4uj"]
-[ext_resource type="Texture2D" uid="uid://d23onvt7mi7kh" path="res://mods-unpacked/Team2-MoreToMine/content/drop/ionic_dust/icon_ionic_dust.png" id="2_wcofb"]
+[ext_resource type="PackedScene" uid="uid://ccaqfh3gael2v" path="res://mods-unpacked/Team2-MoreToMine/content/drop/quartz/quartz_drop.tscn" id="1_c8q8i"]
+[ext_resource type="Texture2D" uid="uid://2h8hf4phuwrl" path="res://mods-unpacked/Team2-MoreToMine/content/drop/quartz/icon_quartz.png" id="2_lplqf"]
 [ext_resource type="Script" path="res://mods-unpacked/Team2-MoreToMine/data/_scripts/resource.gd" id="3_aukm8"]
 
 [resource]
 script = ExtResource("3_aukm8")
 tile_id = 45
 tile_string = "team_2_quartz"
-icon = ExtResource("2_wcofb")
-drop_scene = ExtResource("1_lw4uj")
-resource_sheet_location_center_start = Vector2(5, 8)
-resource_sheet_location_center_end = Vector2(11, 8)
+icon = ExtResource("2_lplqf")
+drop_scene = ExtResource("1_c8q8i")
+resource_sheet_location_center_start = Vector2(5, 1)
+resource_sheet_location_center_end = Vector2(11, 1)
 richness = 1
 drop_min = 1
 drop_max = 3
