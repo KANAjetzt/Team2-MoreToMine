@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("1_raipd")
 tile_id = 47
-tile_string = "team_2_tungsten"
+type = "teamtwotungsten"
 icon = ExtResource("2_gks28")
 drop_scene = ExtResource("1_cnx4n")
 resource_sheet_location_center_start = Vector2(5, 0)

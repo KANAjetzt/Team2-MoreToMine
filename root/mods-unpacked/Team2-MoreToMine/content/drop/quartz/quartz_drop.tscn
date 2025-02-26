@@ -12,6 +12,7 @@ bounce = 0.25
 
 [node name="QuartzDrop" instance=ExtResource("1_7q1tc")]
 physics_material_override = SubResource("PhysicsMaterial_x38rf")
+type = "teamtwoquartz"
 
 [node name="Sprite2D" parent="." index="0" groups=["unstyled"]]
 material = null

@@ -8,8 +8,8 @@ func init(chain: ModLoaderHookChain, fromDeserialize := false, generateChambers 
 	var globals: Team2Globals = mod_node.globals
 
 	for resource in globals.resources:
-		main_node.tilesByType[resource.tile_string] = []
-		Data.TILE_ID_TO_STRING_MAP[resource.tile_id] = resource.tile_string
+		main_node.tilesByType[resource.type] = []
+		Data.TILE_ID_TO_STRING_MAP[resource.tile_id] = resource.type
 
 
 func isResourceTile(chain: ModLoaderHookChain, typeId: int) -> bool:
@@ -66,7 +66,7 @@ func revealTile(chain: ModLoaderHookChain, coord:Vector2):
 
 		# !! MODDED CODE START !! #
 		for resource in globals.resources:
-			if resource.tile_string == tile.type:
+			if resource.type == tile.type:
 				tile.richness = resource.richness
 				main_node.revealTileVisually(coord)
 		# !! MODDED CODE END !! #
@@ -98,7 +98,7 @@ func destroyTile(chain: ModLoaderHookChain, tile, withDropsAndSound := true):
 	var is_modded_tile := false
 
 	for resource in globals.resources:
-		if tile.type == resource.tile_string:
+		if tile.type == resource.type:
 			is_modded_tile = true
 			break
 
@@ -120,7 +120,7 @@ func destroyTile(chain: ModLoaderHookChain, tile, withDropsAndSound := true):
 
 		# !! MODDED CODE START !! #
 		for resource in globals.resources:
-			if tile.type == resource.tile_string:
+			if tile.type == resource.type:
 				drops = randi_range(resource.drop_min, resource.drop_max)
 		# !! MODDED CODE END !! #
 

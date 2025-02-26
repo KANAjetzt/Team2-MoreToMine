@@ -16,6 +16,7 @@ height = 14.0
 
 [node name="RubyDrop" instance=ExtResource("1_sk20d")]
 physics_material_override = SubResource("PhysicsMaterial_g1aui")
+type = "teamtworuby"
 
 [node name="Sprite2D" parent="." index="0" groups=["unstyled"]]
 material = null

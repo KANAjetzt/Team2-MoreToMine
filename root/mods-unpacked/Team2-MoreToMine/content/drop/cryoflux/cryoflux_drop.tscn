@@ -15,6 +15,10 @@ size = Vector2(10, 10)
 
 [node name="CryofluxDrop" instance=ExtResource("1_00rb4")]
 physics_material_override = SubResource("PhysicsMaterial_8iijk")
+constant_force = Vector2(0, 10)
+constant_torque = 3.0
+type = "teamtwocryoflux"
+floatUncarried = true
 
 [node name="Sprite2D" parent="." index="0" groups=["unstyled"]]
 material = null

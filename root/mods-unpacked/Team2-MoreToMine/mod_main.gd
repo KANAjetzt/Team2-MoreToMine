@@ -24,6 +24,8 @@ func _init() -> void:
 func install_script_extensions() -> void:
 	extensions_dir_path = mod_dir_path.path_join("extensions")
 	ModLoaderMod.install_script_extension(extensions_dir_path.path_join("content/map/generation/TileDataGenerator.gd"))
+	ModLoaderMod.install_script_extension(extensions_dir_path.path_join("game/GameWorld.gd"))
+	ModLoaderMod.install_script_extension(extensions_dir_path.path_join("content/dome/shredder/Shredder.gd"))
 
 
 func install_script_hook_files() -> void:
@@ -31,6 +33,8 @@ func install_script_hook_files() -> void:
 	ModLoaderMod.install_script_hooks("res://content/map/Map.gd", extensions_dir_path.path_join("content/map/Map.hooks.gd"))
 	ModLoaderMod.install_script_hooks("res://content/map/MapData.gd", extensions_dir_path.path_join("content/map/MapData.hooks.gd"))
 	ModLoaderMod.install_script_hooks("res://content/map/tile/Tile.gd", extensions_dir_path.path_join("content/map/tile/Tile.hooks.gd"))
+	ModLoaderMod.install_script_hooks("res://content/dome/Dome.gd", extensions_dir_path.path_join("content/dome/Dome.hooks.gd"))
+	ModLoaderMod.install_script_hooks("res://content/drop/Drop.gd", extensions_dir_path.path_join("content/drop/Drop.hooks.gd"))
 
 
 func add_translations() -> void:
@@ -41,5 +45,5 @@ func _ready() -> void:
 	ModLoaderLog.debug("%s is ready!" % TEAM2_MORE_TO_MINE_MOD_DIR, TEAM2_MORE_TO_MINE_LOG_NAME)
 
 	for resource in globals.resources:
-		Data.DROP_ICONS[resource.tile_string] = resource.icon
-		Data.DROP_SCENES[resource.tile_string] = resource.drop_scene
+		Data.DROP_ICONS[resource.type] = resource.icon
+		Data.DROP_SCENES[resource.type] = resource.drop_scene

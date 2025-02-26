@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://mods-unpacked/Team2-MoreToMine/data/_scripts/resource.gd" id="1_1j5q6"]
 [ext_resource type="PackedScene" uid="uid://hc8moa1hfya" path="res://mods-unpacked/Team2-MoreToMine/content/drop/copper/copper_drop.tscn" id="1_1ug43"]
-[ext_resource type="Texture2D" uid="uid://ljbw0a5vkpj5" path="res://mods-unpacked/Team2-MoreToMine/content/drop/copper/copper_smol.png" id="2_66c1f"]
+[ext_resource type="Texture2D" uid="uid://cby3gpx2efqid" path="res://mods-unpacked/Team2-MoreToMine/content/drop/copper/copper_smol.png" id="2_66c1f"]
 
 [resource]
 script = ExtResource("1_1j5q6")
 tile_id = 42
-tile_string = "team_2_copper"
+type = "teamtwocopper"
 icon = ExtResource("2_66c1f")
 drop_scene = ExtResource("1_1ug43")
 resource_sheet_location_center_start = Vector2(7, 7)

@@ -3,7 +3,11 @@ extends Resource
 
 
 @export var tile_id: int
-@export var tile_string: String
+## Used in many places to reference the resource type
+## The "type" for iron is "iron"
+## It's better to prefix modded stuff to prevent naming conflicts so all
+## oure resources begin with "teamtwo".
+@export var type: String
 @export var icon: Texture
 @export var drop_scene: PackedScene
 ## The position of the resource sprites in the resources_sheet.png

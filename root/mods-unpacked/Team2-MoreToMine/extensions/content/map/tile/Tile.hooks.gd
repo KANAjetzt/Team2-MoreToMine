@@ -22,7 +22,7 @@ func setType(chain: ModLoaderHookChain, type:String):
 	main_node.type = type
 
 	for resource in globals.resources:
-		if resource.tile_string == type:
+		if resource.type == type:
 			var baseHealth:float = Data.of("map.tileBaseHealth")
 
 			main_node.set_meta("destructable", true)

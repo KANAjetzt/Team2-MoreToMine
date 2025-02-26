@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("1_jqd1v")
 tile_id = 44
-tile_string = "team_2_ionic_dust"
+type = "teamtwoionicdust"
 icon = ExtResource("2_4f31m")
 drop_scene = ExtResource("1_xhyy5")
 resource_sheet_location_center_start = Vector2(5, 8)

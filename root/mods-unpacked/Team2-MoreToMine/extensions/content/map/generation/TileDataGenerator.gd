@@ -24,7 +24,7 @@ func generate_resources(rand):
 				var ressource_cell = $MapData.get_resourcev(cell)
 				if ressource_cell >= Data.TILE_DIRT_START && ressource_cell <= Data.TILE_DIRT_START + Data.HARDNESS_VERY_HARD:
 					$MapData.set_resourcev(cell, resource.tile_id)
-					print_generated_resource(cell, resource.tile_string)
+					print_generated_resource(cell, resource.type)
 					resources_generated += 1
 				if resources_generated >= resource.spawn_per_layer_max:
 					break
