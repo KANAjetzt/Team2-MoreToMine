@@ -3,6 +3,7 @@ extends Node
 
 const TEAM2_MORE_TO_MINE_MOD_DIR := "Team2-MoreToMine"
 const TEAM2_MORE_TO_MINE_LOG_NAME := "Team2-MoreToMine:Main"
+const DOME_UPGRADE_NAME = "crafting"
 
 var mod_dir_path := ""
 var extensions_dir_path := ""
@@ -16,6 +17,10 @@ func _init() -> void:
 	# Add extensions
 	install_script_extensions()
 	install_script_hook_files()
+	
+	ModLoaderMod.install_script_extension(mod_dir_path + "/content/hud/inventory/Inventory.gd")
+	ModLoaderMod.install_script_extension(mod_dir_path + "/content/techtree/Tech2.gd")
+	ModLoaderMod.install_script_extension(mod_dir_path + "/content/techtree/TechTreePopup.gd")
 
 	# Add translations
 	add_translations()
@@ -43,7 +48,18 @@ func add_translations() -> void:
 
 func _ready() -> void:
 	ModLoaderLog.debug("%s is ready!" % TEAM2_MORE_TO_MINE_MOD_DIR, TEAM2_MORE_TO_MINE_LOG_NAME)
-
+	add_to_group("mod_init")
+	
 	for resource in globals.resources:
 		Data.DROP_ICONS[resource.type] = resource.icon
 		Data.DROP_SCENES[resource.type] = resource.drop_scene
+
+func modInit() -> void:
+	var path_to_mod_yaml := "res://mods-unpacked/Team2-MoreToMine/yaml/upgrades.yaml"
+	ModLoaderLog.debug("Trying to parse YAML: %s" % path_to_mod_yaml, TEAM2_MORE_TO_MINE_LOG_NAME)
+	Data.parseUpgradesYaml(path_to_mod_yaml)
+	GameWorld.unlockedElements.push_back(DOME_UPGRADE_NAME)
+	StageManager.level_ready.connect(
+		func unlock():
+			GameWorld.addUpgrade(DOME_UPGRADE_NAME)
+	)

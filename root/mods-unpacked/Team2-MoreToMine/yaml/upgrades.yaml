@@ -1,0 +1,10 @@
+crafting:
+  type: gadget
+craftingCollapsedEnergyCore1:
+  cost: copper=0
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.copper += 1
+  predecessors: [crafting]
+
