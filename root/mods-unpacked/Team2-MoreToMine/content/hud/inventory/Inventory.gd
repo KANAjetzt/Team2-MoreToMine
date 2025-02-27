@@ -2,8 +2,16 @@ extends "res://content/hud/inventory/Inventory.gd"
 
 func init():
 	super.init()
+	#0 iron, 1 water, 2 cobalt, 3 copper, 4 tungsten, 5 quartz, 6 ruby, 7 ionic_dust, 8 cryoflux
+	#9 magnetic_screws, 10 sintered_metal, 11 absorption_hull, 12 micro_gear, 13 liquefier
+	#14 coated_lens, 15 dampener_ring, 16 dynamic_dampener, 17 ruby_coated_lens
+	#18 lens_array, 19 energy_casing, 20 fusion_cell, 21 plasma_cell, 22 vacuum_energy_cell
+	#23 nano_circuit_board, 24 data_matrix, 25 crystalic_filter, 26 phase_coil 27 coil_grid
+	#28 pulse_emitter, 29 modular_pulse_emitter, 30 modular_beam_emitter, 31 overload_buffer
+	#32 pivot_mechanism, 33 feedback_buffer, 34 rail_track, 35 magnetic_rail_system
+	#36 cryo_magnet_rail_system, 37 servo_motor, 38 servo_drive, 39 absorption_field_generator
 	cache = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-	set("element_size", Vector2(6, 18))
+	set("element_size", Vector2(8, 18))
 	Data.listen(self, "inventory.copper", true)
 	Data.listen(self, "inventory.tungsten", true)
 	Data.listen(self, "inventory.quartz", true)
@@ -33,6 +41,7 @@ func init():
 		gContainer.add_child(texture_rect)
 		var label = base_label.duplicate()
 		label.name = "Label" + material["name"]
+		label.text = str(0)
 		gContainer.add_child(label)
 
 func propertyChanged(property:String, oldValue, newValue):
@@ -50,26 +59,26 @@ func propertyChanged(property:String, oldValue, newValue):
 			updateSize()
 			find_child("LabelSand").text = str(newValue)
 		"inventory.copper":
-			cache[2] = newValue
+			cache[3] = newValue
 			updateSize()
-			find_child("LabelCopper", false, true).text = str(newValue)
+			$GridContainer/LabelCopper.text = str(newValue)
 		"inventory.tungsten":
-			cache[2] = newValue
+			cache[4] = newValue
 			updateSize()
-			find_child("LabelTungsten", false, true).text = str(newValue)
+			$GridContainer/LabelTungsten.text = str(newValue)
 		"inventory.quartz":
-			cache[2] = newValue
+			cache[5] = newValue
 			updateSize()
-			find_child("LabelQuartz", false, true).text = str(newValue)
+			$GridContainer/LabelQuartz.text = str(newValue)
 		"inventory.ruby":
-			cache[2] = newValue
+			cache[6] = newValue
 			updateSize()
-			find_child("LabelRuby", false, true).text = str(newValue)
+			$GridContainer/LabelRuby.text = str(newValue)
 		"inventory.ionic_dust":
-			cache[2] = newValue
+			cache[7] = newValue
 			updateSize()
-			find_child("LabelIonic_dust", false, true).text = str(newValue)
+			$GridContainer/LabelIonic_dust.text = str(newValue)
 		"inventory.cryoflux":
-			cache[2] = newValue
+			cache[8] = newValue
 			updateSize()
-			find_child("LabelCryoflux", false, true).text = str(newValue)
+			$GridContainer/LabelCryoflux.text = str(newValue)
