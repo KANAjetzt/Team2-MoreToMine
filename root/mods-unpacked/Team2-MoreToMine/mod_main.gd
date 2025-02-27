@@ -17,13 +17,15 @@ func _init() -> void:
 	# Add extensions
 	install_script_extensions()
 	install_script_hook_files()
-	
+
 	ModLoaderMod.install_script_extension(mod_dir_path + "/content/hud/inventory/Inventory.gd")
 	ModLoaderMod.install_script_extension(mod_dir_path + "/content/techtree/Tech2.gd")
 	ModLoaderMod.install_script_extension(mod_dir_path + "/content/techtree/TechTreePopup.gd")
 
 	# Add translations
 	add_translations()
+
+	# TODO: Load fixed hooked vanilla scripts here
 
 
 func install_script_extensions() -> void:
@@ -49,7 +51,7 @@ func add_translations() -> void:
 func _ready() -> void:
 	ModLoaderLog.debug("%s is ready!" % TEAM2_MORE_TO_MINE_MOD_DIR, TEAM2_MORE_TO_MINE_LOG_NAME)
 	add_to_group("mod_init")
-	
+
 	for resource in globals.resources:
 		Data.DROP_ICONS[resource.type] = resource.icon
 		Data.DROP_SCENES[resource.type] = resource.drop_scene
