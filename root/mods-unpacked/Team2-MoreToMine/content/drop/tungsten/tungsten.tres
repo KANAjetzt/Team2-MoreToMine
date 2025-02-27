@@ -23,3 +23,6 @@ drop_max = 3
 spawn_per_layer_max = 3
 reverse_gravity = false
 reverse_gravity_strength = 100.0
+mass = 5.0
+increase_speed_los_per_carry = true
+increase_speed_los_per_carry_amount = 7.5

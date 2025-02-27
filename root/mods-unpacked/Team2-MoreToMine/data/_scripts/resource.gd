@@ -24,3 +24,11 @@ extends Resource
 @export var spawn_per_layer_max: int = 3
 @export var reverse_gravity := false
 @export var reverse_gravity_strength := 100.0
+## Drop mass in kg - does not affect the ammount that can be carried.
+@export var mass := 1.0
+@export var increase_speed_los_per_carry := false
+## This will add to speedLossPerCarry if a drop is picked up.
+## Check jetpackStrength1 upgrade for reference
+## jetpackStrength1 = keeper1.speedLossPerCarry = 2.15
+## jetpackStrength2 = keeper1.speedLossPerCarry = 0.9
+@export var increase_speed_los_per_carry_amount := 0.5

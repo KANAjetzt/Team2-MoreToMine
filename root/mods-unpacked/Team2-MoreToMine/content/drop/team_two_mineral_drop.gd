@@ -15,3 +15,4 @@ func _ready() -> void:
 	sprite_2d.texture = data.texture
 	carry_sprite.texture = data.texture_carry
 	focus_sprite.texture = data.texture_focus
+	mass = data.mass
