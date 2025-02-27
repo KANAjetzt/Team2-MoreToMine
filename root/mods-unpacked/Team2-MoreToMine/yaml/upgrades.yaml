@@ -1,10 +1,287 @@
-crafting:
+crafting1:
   type: gadget
-craftingCollapsedEnergyCore1:
-  cost: copper=0
+crafting2:
+  type: gadget
+magnetic_screws:
+  cost: iron=1, water=1
   repeatable: true
   craftable: true
   propertyChanges:
-    - inventory.copper += 1
-  predecessors: [crafting]
+    - inventory.magnetic_screws += 3
+  predecessors: [crafting1]
+micro_gear:
+  cost: iron=1, magnetic_screws=2, phase_coil=1
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.micro_gear += 1
+  predecessors: [magnetic_screws]
+servo_motor:
+  cost: micro_gear=2, magnetic_screws=3, coil_grid=1
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.servo_motor += 1
+  predecessors: [micro_gear]
+servo_drive:
+  cost: servo_motor=1, data_matrix=2, coil_grid=2
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.servo_drive += 1
+  predecessors: [servo_motor]
+  
+sintered_metal:
+  cost: iron=1, copper=1
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.sintered_metal += 1
+  predecessors: [crafting1]
+absorption_hull:
+  cost: sintered_metal=1, water=1, quartz=2, copper=2
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.absorption_hull += 1
+  predecessors: [sintered_metal]
 
+nano_circuit_board:
+  cost: iron=1, copper=1, quartz=3
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.nano_circuit_board += 2
+  predecessors: [crafting1]
+data_matrix:
+  cost: nano_circuit_board=5, ruby=1, quartz=1
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.data_matrix += 1
+  predecessors: [nano_circuit_board]
+
+energy_casing:
+  cost: iron=1, quartz=2
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.energy_casing += 1
+  predecessors: [crafting2]
+fusion_cell:
+  cost: energy_casing=1, sintered_metal=1, phase_coil=1
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.fusion_cell += 1
+  predecessors: [energy_casing]
+plasma_cell:
+  cost: fusion_cell=1, cobalt=2, sintered_metal=2, phase_coil=1
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.plasma_cell += 1
+  predecessors: [fusion_cell]
+vacuum_energy_cell:
+  cost: plasma_cell=1, crystalic_filter=2, absorption_hull=2, coil_grid=1
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.vacuum_energy_cell += 1
+  predecessors: [plasma_cell]
+
+phase_coil:
+  cost: copper=2
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.phase_coil += 1
+  predecessors: [crafting1]
+coil_grid:
+  cost: phase_coil=3, iron=1
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.coil_grid += 1
+  predecessors: [phase_coil]
+
+coated_lens:
+  cost: water=1, quartz=2
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.coated_lens += 1
+  predecessors: [crafting2]
+lens_array:
+  cost: nano_circuit_board=1, sintered_metal=1, coated_lens=3
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.lens_array += 1
+  predecessors: [coated_lens]
+ruby_coated_lens:
+  cost: ruby=4, lens_array=1, ionic_dust=2
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.ruby_coated_lens += 1
+  predecessors: [lens_array]
+pulse_emitter:
+  cost: coated_lens=1, micro_gear=2
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.pulse_emitter += 1
+  predecessors: [coated_lens]
+modular_pulse_emitter:
+  cost: quartz=2, lens_array=1, pulse_emitter=2
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.modular_pulse_emitter += 1
+  predecessors: [pulse_emitter]
+modular_beam_emitter:
+  cost: servo_motor=1, ruby_coated_lens=2, modular_pulse_emitter=2, absorption_hull=2
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.modular_beam_emitter += 1
+  predecessors: [modular_pulse_emitter]
+
+liquefier:
+  cost: ionic_dust=3, tungsten=1, iron=2
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.liquefier += 1
+  predecessors: [crafting1]
+crystalic_filter:
+  cost: cryoflux=2, ruby=1
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.crystalic_filter += 1
+  predecessors: [liquefier]
+  
+overload_buffer:
+  cost: absorption_hull=1, tungsten=3
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.overload_buffer += 1
+  predecessors: [crafting1]
+feedback_buffer:
+  cost: overload_buffer=2, cryoflux=2, lens_array=1
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.feedback_buffer += 1
+  predecessors: [overload_buffer]
+
+rail_track:
+  cost: cobalt=1, iron=4, water=2
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.rail_track += 1
+  predecessors: [crafting1]
+magnetic_rail_system:
+  cost: rail_track=1, coil_grid=2
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.magnetic_rail_system += 1
+  predecessors: [rail_track]
+cryo_magnet_rail_system:
+  cost: magnetic_rail_system=1, coil_grid=1, crystalic_filter=2
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.cryo_magnet_rail_system += 1
+  predecessors: [magnetic_rail_system]
+
+pivot_mechanism:
+  cost: tungsten=3, magnetic_screws=4, sintered_metal=1, micro_gear=2
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.pivot_mechanism += 1
+  predecessors: [micro_gear]
+  
+absorption_field_generator:
+  cost: ruby=3, ruby_coated_lens=2, absorption_hull=2
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.absorption_field_generator += 1
+  predecessors: [absorption_hull]
+
+laserStrength1:
+  cost: pulse_emitter=1, fusion_cell=1
+  propertyChanges: 
+    - laser.dps = 30
+    - laser.stun += 0.1
+    - laser.movespeedwhilefiring = 0.38
+    - laser.variant += 1
+    - laser.firedelay += 0.1
+  predecessors: [laser]
+laserStrength2:
+  cost: modular_pulse_emitter=1, plasma_cell=1
+  propertyChanges: 
+    - laser.dps = 55
+    - laser.stun += 0.1
+    - laser.movespeedwhilefiring = 0.24
+    - laser.variant += 1
+    - laser.firedelay += 0.15
+  predecessors: [laserStrength1]
+laserStrength3:
+  cost: modular_pulse_emitter=2, plasma_cell=2, overload_buffer=1
+  propertyChanges: 
+    - laser.dps = 110
+    - laser.stun += 0.2
+    - laser.movespeedwhilefiring = 0.15
+    - laser.variant += 1
+    - laser.firedelay += 0.15
+    - laser.movespeed -= 0.02
+  predecessors: [laserStrength2]
+laserStrength4:
+  cost: modular_beam_emitter=1, vacuum_energy_cell=2, feedback_buffer=1
+  propertyChanges: 
+    - laser.dps = 210
+    - laser.stun += 0.3
+    - laser.movespeedwhilefiring = 0.05
+    - laser.variant += 1
+    - laser.firedelay += 0.15
+    - laser.movespeed -= 0.04
+  predecessors: [laserStrength3]
+laserhitprojectiles:
+  cost: modular_pulse_emitter=1, absorption_field_generator=1, sintered_metal=2
+  propertyChanges: 
+    - laser.hitprojectiles = true
+  predecessors: [laserStrength2]
+laserBend:
+  cost: servo_motor=1, data_matrix=2, pivot_mechanism=3
+  propertyChanges: 
+    - laser.bend = 6
+  predecessors: [laserMove1]
+laserAimLine:
+  cost: data_matrix=1, coated_lens=1, micro_gear=2
+  propertyChanges: 
+    - laser.aimLine = true
+  predecessors: [laser]
+laserMove1:
+  cost: magnetic_screws=4, micro_gear=2, rail_track=1
+  propertyChanges: 
+    - laser.movespeed += 0.1
+  predecessors: [laser]
+laserMove2:
+  cost: magnetic_screws=4, servo_motor=1, magnetic_rail_system=1, dampener_ring=2
+  propertyChanges: 
+    - laser.movespeed += 0.15
+  predecessors: [laserMove1]
+laserMove3:
+  cost: magnetic_screws=6, servo_drive=2, cryo_magnet_rail_system=1, dynamic_dampener=1
+  propertyChanges: 
+    - laser.movespeed += 0.2
+  predecessors: [laserMove2]
+  

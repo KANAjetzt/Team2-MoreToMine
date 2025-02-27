@@ -3,7 +3,8 @@ extends Node
 
 const TEAM2_MORE_TO_MINE_MOD_DIR := "Team2-MoreToMine"
 const TEAM2_MORE_TO_MINE_LOG_NAME := "Team2-MoreToMine:Main"
-const DOME_UPGRADE_NAME = "crafting"
+const DOME_UPGRADE_NAME_1 = "crafting1"
+const DOME_UPGRADE_NAME_2 = "crafting2"
 
 var mod_dir_path := ""
 var extensions_dir_path := ""
@@ -60,8 +61,13 @@ func modInit() -> void:
 	var path_to_mod_yaml := "res://mods-unpacked/Team2-MoreToMine/yaml/upgrades.yaml"
 	ModLoaderLog.debug("Trying to parse YAML: %s" % path_to_mod_yaml, TEAM2_MORE_TO_MINE_LOG_NAME)
 	Data.parseUpgradesYaml(path_to_mod_yaml)
-	GameWorld.unlockedElements.push_back(DOME_UPGRADE_NAME)
+	GameWorld.unlockedElements.push_back(DOME_UPGRADE_NAME_1)
 	StageManager.level_ready.connect(
 		func unlock():
-			GameWorld.addUpgrade(DOME_UPGRADE_NAME)
+			GameWorld.addUpgrade(DOME_UPGRADE_NAME_1)
+	)
+	GameWorld.unlockedElements.push_back(DOME_UPGRADE_NAME_2)
+	StageManager.level_ready.connect(
+		func unlock():
+			GameWorld.addUpgrade(DOME_UPGRADE_NAME_2)
 	)
