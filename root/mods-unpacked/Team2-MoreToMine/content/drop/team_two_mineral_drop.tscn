@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqfg1lw7bije7"]
+
+[ext_resource type="PackedScene" uid="uid://cndiyiean38ms" path="res://content/drop/MineralDrop.tscn" id="1_5ndfe"]
+[ext_resource type="Script" path="res://mods-unpacked/Team2-MoreToMine/content/drop/team_two_mineral_drop.gd" id="2_pdswt"]
+[ext_resource type="Texture2D" uid="uid://cby3gpx2efqid" path="res://mods-unpacked/Team2-MoreToMine/content/drop/copper/copper_smol.png" id="3_cusx4"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_74p4i"]
+resource_local_to_scene = true
+friction = 0.6
+bounce = 0.25
+
+[node name="TeamTwoMineralDrop" instance=ExtResource("1_5ndfe")]
+physics_material_override = SubResource("PhysicsMaterial_74p4i")
+script = ExtResource("2_pdswt")
+data = null
+hasInterDropCollisionSound = false
+carryableType = ""
+
+[node name="Sprite2D" parent="." index="0" groups=["unstyled"]]
+material = null
+texture = ExtResource("3_cusx4")

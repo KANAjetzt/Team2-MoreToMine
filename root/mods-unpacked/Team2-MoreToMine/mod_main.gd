@@ -54,7 +54,7 @@ func _ready() -> void:
 
 	for resource in globals.resources:
 		Data.DROP_ICONS[resource.type] = resource.icon
-		Data.DROP_SCENES[resource.type] = resource.drop_scene
+		Data.DROP_SCENES[resource.type] = load(resource.drop_scene_path)
 
 func modInit() -> void:
 	var path_to_mod_yaml := "res://mods-unpacked/Team2-MoreToMine/yaml/upgrades.yaml"

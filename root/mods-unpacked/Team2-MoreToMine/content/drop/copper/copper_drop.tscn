@@ -1,39 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://hc8moa1hfya"]
+[gd_scene load_steps=5 format=3 uid="uid://dg3jw2sw5vphx"]
 
-[ext_resource type="PackedScene" uid="uid://cndiyiean38ms" path="res://content/drop/MineralDrop.tscn" id="1_0pd8a"]
-[ext_resource type="Texture2D" uid="uid://cby3gpx2efqid" path="res://mods-unpacked/Team2-MoreToMine/content/drop/copper/copper_smol.png" id="2_skcqp"]
-[ext_resource type="PackedScene" uid="uid://1olcox7jq6mr" path="res://mods-unpacked/Team2-MoreToMine/content/drop/copper/copper_shred_particles.tscn" id="3_sq2r1"]
-[ext_resource type="Texture2D" uid="uid://cg44b5apm73bc" path="res://mods-unpacked/Team2-MoreToMine/content/drop/copper/carried.png" id="3_xsq2x"]
-[ext_resource type="Texture2D" uid="uid://cgonqx8pnu4a7" path="res://mods-unpacked/Team2-MoreToMine/content/drop/copper/focussed.png" id="4_vvb2y"]
+[ext_resource type="PackedScene" uid="uid://dqfg1lw7bije7" path="res://mods-unpacked/Team2-MoreToMine/content/drop/team_two_mineral_drop.tscn" id="1_cjs8y"]
+[ext_resource type="Resource" uid="uid://bbe8k5wpm5brj" path="res://mods-unpacked/Team2-MoreToMine/content/drop/copper/copper.tres" id="2_hx5kk"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_76bw5"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_roldb"]
 resource_local_to_scene = true
 friction = 0.6
 bounce = 0.25
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yunos"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5noig"]
 size = Vector2(8, 8)
 
-[node name="CopperDrop" instance=ExtResource("1_0pd8a")]
-physics_material_override = SubResource("PhysicsMaterial_76bw5")
-type = "teamtwocopper"
-
-[node name="Sprite2D" parent="." index="0" groups=["unstyled"]]
-material = null
-texture = ExtResource("2_skcqp")
-
-[node name="CarrySprite" parent="." index="1"]
-texture = ExtResource("3_xsq2x")
-
-[node name="FocusSprite" parent="." index="2"]
-texture = ExtResource("4_vvb2y")
-
-[node name="DropEnterTrigger" parent="." index="3"]
-visible = false
+[node name="CopperDrop" instance=ExtResource("1_cjs8y")]
+physics_material_override = SubResource("PhysicsMaterial_roldb")
+data = ExtResource("2_hx5kk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="5"]
-visible = false
-shape = SubResource("RectangleShape2D_yunos")
-
-[node name="ShredParticles" parent="." index="6" instance=ExtResource("3_sq2r1")]
-visible = false
+shape = SubResource("RectangleShape2D_5noig")

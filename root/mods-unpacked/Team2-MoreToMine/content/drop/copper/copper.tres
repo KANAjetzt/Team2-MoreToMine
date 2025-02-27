@@ -1,15 +1,19 @@
-[gd_resource type="Resource" script_class="Team2ResourceData" load_steps=4 format=3 uid="uid://bbe8k5wpm5brj"]
+[gd_resource type="Resource" script_class="Team2ResourceData" load_steps=5 format=3 uid="uid://bbe8k5wpm5brj"]
 
 [ext_resource type="Script" path="res://mods-unpacked/Team2-MoreToMine/data/_scripts/resource.gd" id="1_1j5q6"]
-[ext_resource type="PackedScene" uid="uid://hc8moa1hfya" path="res://mods-unpacked/Team2-MoreToMine/content/drop/copper/copper_drop.tscn" id="1_1ug43"]
 [ext_resource type="Texture2D" uid="uid://cby3gpx2efqid" path="res://mods-unpacked/Team2-MoreToMine/content/drop/copper/copper_smol.png" id="2_66c1f"]
+[ext_resource type="Texture2D" uid="uid://cg44b5apm73bc" path="res://mods-unpacked/Team2-MoreToMine/content/drop/copper/carried.png" id="3_lowj2"]
+[ext_resource type="Texture2D" uid="uid://cgonqx8pnu4a7" path="res://mods-unpacked/Team2-MoreToMine/content/drop/copper/focussed.png" id="4_nu3q4"]
 
 [resource]
 script = ExtResource("1_1j5q6")
 tile_id = 42
-type = "teamtwocopper"
+type = "copper"
+texture = ExtResource("2_66c1f")
+texture_carry = ExtResource("3_lowj2")
+texture_focus = ExtResource("4_nu3q4")
 icon = ExtResource("2_66c1f")
-drop_scene = ExtResource("1_1ug43")
+drop_scene_path = "res://mods-unpacked/Team2-MoreToMine/content/drop/copper/copper_drop.tscn"
 resource_sheet_location_center_start = Vector2(7, 7)
 resource_sheet_location_center_end = Vector2(11, 7)
 richness = 1

@@ -1,15 +1,20 @@
-[gd_resource type="Resource" script_class="Team2ResourceData" load_steps=4 format=3 uid="uid://dui6w3ds2shsf"]
+[gd_resource type="Resource" script_class="Team2ResourceData" load_steps=6 format=3 uid="uid://dui6w3ds2shsf"]
 
-[ext_resource type="PackedScene" uid="uid://cjtyj3awfnqxj" path="res://mods-unpacked/Team2-MoreToMine/content/drop/ruby/ruby_drop.tscn" id="1_0q4bl"]
 [ext_resource type="Texture2D" uid="uid://cu2uc3p3nmapc" path="res://mods-unpacked/Team2-MoreToMine/content/drop/ruby/icon_ruby.png" id="2_jhjyc"]
 [ext_resource type="Script" path="res://mods-unpacked/Team2-MoreToMine/data/_scripts/resource.gd" id="3_005wj"]
+[ext_resource type="Texture2D" uid="uid://cqfo2lqrwy346" path="res://mods-unpacked/Team2-MoreToMine/content/drop/ruby/ruby_smol.png" id="3_q02bm"]
+[ext_resource type="Texture2D" uid="uid://cgj36up3g5cqd" path="res://mods-unpacked/Team2-MoreToMine/content/drop/ruby/carried.png" id="4_2irqh"]
+[ext_resource type="Texture2D" uid="uid://7o24x64kclai" path="res://mods-unpacked/Team2-MoreToMine/content/drop/ruby/focussed.png" id="5_o3kfs"]
 
 [resource]
 script = ExtResource("3_005wj")
 tile_id = 46
-type = "teamtworuby"
+type = "ruby"
+texture = ExtResource("3_q02bm")
+texture_carry = ExtResource("4_2irqh")
+texture_focus = ExtResource("5_o3kfs")
 icon = ExtResource("2_jhjyc")
-drop_scene = ExtResource("1_0q4bl")
+drop_scene_path = "res://mods-unpacked/Team2-MoreToMine/content/drop/ruby/ruby_drop.tscn"
 resource_sheet_location_center_start = Vector2(5, 2)
 resource_sheet_location_center_end = Vector2(11, 2)
 richness = 1

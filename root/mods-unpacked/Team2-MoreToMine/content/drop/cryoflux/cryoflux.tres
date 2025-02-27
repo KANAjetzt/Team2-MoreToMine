@@ -1,15 +1,20 @@
-[gd_resource type="Resource" script_class="Team2ResourceData" load_steps=4 format=3 uid="uid://e4lfrt6fun05"]
+[gd_resource type="Resource" script_class="Team2ResourceData" load_steps=6 format=3 uid="uid://e4lfrt6fun05"]
 
 [ext_resource type="Script" path="res://mods-unpacked/Team2-MoreToMine/data/_scripts/resource.gd" id="1_4gopt"]
-[ext_resource type="PackedScene" uid="uid://buhasc7jt3fmm" path="res://mods-unpacked/Team2-MoreToMine/content/drop/cryoflux/cryoflux_drop.tscn" id="1_8bg8s"]
 [ext_resource type="Texture2D" uid="uid://dd51k7yoh35j7" path="res://mods-unpacked/Team2-MoreToMine/content/drop/cryoflux/icon_cryoflux.png" id="2_v860x"]
+[ext_resource type="Texture2D" uid="uid://dfvn43rb4y0nt" path="res://mods-unpacked/Team2-MoreToMine/content/drop/cryoflux/cryoflux_smol.png" id="3_qdxfi"]
+[ext_resource type="Texture2D" uid="uid://ckd6gn5m7ik8l" path="res://mods-unpacked/Team2-MoreToMine/content/drop/cryoflux/carried.png" id="4_w4y1w"]
+[ext_resource type="Texture2D" uid="uid://bvpifefeg03lv" path="res://mods-unpacked/Team2-MoreToMine/content/drop/cryoflux/focussed.png" id="5_abfyo"]
 
 [resource]
 script = ExtResource("1_4gopt")
 tile_id = 43
-type = "teamtwocryoflux"
+type = "cryoflux"
+texture = ExtResource("3_qdxfi")
+texture_carry = ExtResource("4_w4y1w")
+texture_focus = ExtResource("5_abfyo")
 icon = ExtResource("2_v860x")
-drop_scene = ExtResource("1_8bg8s")
+drop_scene_path = "res://mods-unpacked/Team2-MoreToMine/content/drop/cryoflux/cryoflux_drop.tscn"
 resource_sheet_location_center_start = Vector2(5, 9)
 resource_sheet_location_center_end = Vector2(11, 9)
 richness = 1
