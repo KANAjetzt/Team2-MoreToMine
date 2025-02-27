@@ -9,7 +9,6 @@ func _ready(chain: ModLoaderHookChain):
 
 	if res_sprite:
 		res_sprite.texture = load("res://mods-unpacked/Team2-MoreToMine/content/map/border/resources_sheet.png")
-		#Style.init(res_sprite)
 
 
 func setType(chain: ModLoaderHookChain, type:String):
@@ -54,6 +53,6 @@ func setType(chain: ModLoaderHookChain, type:String):
 			healthMultiplier *= main_node.hardnessMultiplier
 			healthMultiplier *= (pow(Data.of("map.tileHealthMultiplierPerLayer"), main_node.layer))
 
-			var max_health = max(1, round(healthMultiplier * baseHealth))
+			var max_health = max(1, round(healthMultiplier * resource.hardness_multiplier * baseHealth))
 			main_node.max_health = max_health
 			main_node.health = max_health

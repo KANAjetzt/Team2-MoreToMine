@@ -32,3 +32,6 @@ extends Resource
 ## jetpackStrength1 = keeper1.speedLossPerCarry = 2.15
 ## jetpackStrength2 = keeper1.speedLossPerCarry = 0.9
 @export var increase_speed_los_per_carry_amount := 0.5
+## This is an additional hardness multiplier to the one
+## applied based on the rock type.
+@export var hardness_multiplier := 1.0
