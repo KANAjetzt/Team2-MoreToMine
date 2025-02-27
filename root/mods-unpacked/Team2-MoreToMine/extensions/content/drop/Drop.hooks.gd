@@ -2,7 +2,7 @@ extends Object
 
 
 func _physics_process(chain: ModLoaderHookChain, delta) -> void:
-	chain.execute_next()
+	chain.execute_next([delta])
 	var ref: Drop = chain.reference_object
 
 	if not ref.isCarried():
