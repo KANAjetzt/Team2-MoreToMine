@@ -22,3 +22,5 @@ extends Resource
 @export var drop_min: int = 1
 @export var drop_max: int = 3
 @export var spawn_per_layer_max: int = 3
+@export var reverse_gravity := false
+@export var reverse_gravity_strength := 100.0

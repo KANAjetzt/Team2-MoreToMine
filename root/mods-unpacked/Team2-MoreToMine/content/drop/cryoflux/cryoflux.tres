@@ -21,3 +21,5 @@ richness = 1
 drop_min = 1
 drop_max = 3
 spawn_per_layer_max = 3
+reverse_gravity = true
+reverse_gravity_strength = 100.0
