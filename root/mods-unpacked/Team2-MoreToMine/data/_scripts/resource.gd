@@ -21,6 +21,7 @@ extends Resource
 @export var richness: int = 1
 @export var drop_min: int = 1
 @export var drop_max: int = 3
+## Not relevant if clustor spawn is used
 @export var spawn_per_layer_max: int = 3
 @export var reverse_gravity := false
 @export var reverse_gravity_strength := 100.0
@@ -43,6 +44,8 @@ extends Resource
 ## Example: 1.0 = ends to spawn at the end of the map.
 ## Example: 0.5 = will stop spawning at half of the maps depth.
 @export_range(0.0, 1.0) var spawn_depth_max_multiplier := 1.0
+
+@export_group("Clustor Settings")
 @export var spawn_as_cluster := false
 @export var cluster_rate := 10.0
 @export var cluster_size_base := 1.5

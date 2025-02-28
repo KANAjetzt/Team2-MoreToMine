@@ -15,8 +15,13 @@ func prepareCleanData():
 	'phase_coil', 'coil_grid', 'pulse_emitter', 'modular_pulse_emitter', 'modular_beam_emitter', 'overload_buffer', 'pivot_mechanism', 'feedback_buffer',
 	'rail_track', 'magnetic_rail_system', 'cryo_magnet_rail_system', 'servo_motor', 'servo_drive', 'absorption_field_generator']
 
+	var amount := 0
+
+	if GameWorld.devMode or OS.is_debug_build():
+		amount = 100
+
 	for part in parts:
-		Data.apply("inventory.%s" % part, 100)
+		Data.apply("inventory.%s" % part, amount)
 
 	for resource in team_2_globals.resources:
-		Data.apply("inventory.%s" % resource.type, 100)
+		Data.apply("inventory.%s" % resource.type, amount)
