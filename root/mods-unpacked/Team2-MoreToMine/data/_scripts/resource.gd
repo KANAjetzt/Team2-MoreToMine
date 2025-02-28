@@ -35,3 +35,11 @@ extends Resource
 ## This is an additional hardness multiplier to the one
 ## applied based on the rock type.
 @export var hardness_multiplier := 1.0
+## Use this to adjust the depth where the resource will start to spawn.
+## Example: 0.0 = starts to spawn at the top of the map.
+## Example: 0.5 = starts to spawn at half of the maps depth.
+@export_range(0.0, 1.0) var spawn_depth_min_multiplier := 0.0
+## The maximum depth of tiles where a resource will spawn.
+## Example: 1.0 = ends to spawn at the end of the map.
+## Example: 0.5 = will stop spawning at half of the maps depth.
+@export_range(0.0, 1.0) var spawn_depth_max_multiplier := 1.0

@@ -22,7 +22,12 @@ func generate_resources(rand):
 			var resources_generated = 0
 			for cell in biome_cells:
 				var ressource_cell = $MapData.get_resourcev(cell)
-				if ressource_cell >= Data.TILE_DIRT_START && ressource_cell <= Data.TILE_DIRT_START + Data.HARDNESS_VERY_HARD:
+				if (
+					ressource_cell >= Data.TILE_DIRT_START and
+					ressource_cell <= Data.TILE_DIRT_START + Data.HARDNESS_VERY_HARD and
+					cell.y >= a.depth * resource.spawn_depth_min_multiplier and
+					cell.y <= a.depth * resource.spawn_depth_max_multiplier
+				):
 					$MapData.set_resourcev(cell, resource.tile_id)
 					print_generated_resource(cell, resource.type)
 					resources_generated += 1

@@ -27,3 +27,5 @@ mass = 1.0
 increase_speed_los_per_carry = false
 increase_speed_los_per_carry_amount = 0.5
 hardness_multiplier = 2.0
+spawn_depth_min_multiplier = 0.7
+spawn_depth_max_multiplier = 1.0
