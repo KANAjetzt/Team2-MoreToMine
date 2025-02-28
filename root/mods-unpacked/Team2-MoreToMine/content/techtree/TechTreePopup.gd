@@ -30,7 +30,7 @@ func _ready():
 		var cost_label = base_cost_label.duplicate()
 		cost_label.name = "Label" + material["name"] + "Cost"
 		gContainer.add_child(cost_label)
-	
+
 	find_child("Inventory").visible = true
 	find_child("LabelIron").text = str(Data.getInventory(CONST.IRON))
 	find_child("LabelWater").text = str(Data.getInventory(CONST.WATER))
@@ -51,9 +51,9 @@ func _ready():
 	Data.listen(self, "inventory.ruby")
 	Data.listen(self, "inventory.ionic_dust")
 	Data.listen(self, "inventory.cryoflux")
-	
+
 	Style.init(self)
-	
+
 	#duplicate to override color
 	%LabelIronCost.label_settings = %LabelIronCost.label_settings.duplicate()
 	%LabelWaterCost.label_settings = %LabelWaterCost.label_settings.duplicate()
@@ -64,7 +64,7 @@ func _ready():
 	find_child("LabelRubyCost", true, false).label_settings = find_child("LabelRubyCost", true, false).label_settings.duplicate()
 	find_child("LabelIonic_dustCost", true, false).label_settings = find_child("LabelIonic_dustCost", true, false).label_settings.duplicate()
 	find_child("LabelCryofluxCost", true, false).label_settings = find_child("LabelCryofluxCost", true, false).label_settings.duplicate()
-	
+
 	defaultFontColor = %LabelIronCost.label_settings.font_color
 
 func propertyChanged(property:String, oldValue, newValue):
@@ -92,9 +92,9 @@ func propertyChanged(property:String, oldValue, newValue):
 func moveOut():
 	if not isIn:
 		return
-	
+
 	isIn = false
-	
+
 	Data.unlisten(self, "inventory.iron")
 	Data.unlisten(self, "inventory.water")
 	Data.unlisten(self, "inventory.sand")
@@ -109,7 +109,7 @@ func moveOut():
 	$Tween.interpolate_property(self, "position:y", position.y, get_viewport_rect().size.y, 0.3, Tween.TRANS_CUBIC, Tween.EASE_IN)
 	$Tween.interpolate_callback(self, 0.5, "queue_free")
 	$Tween.start()
-	
+
 	if focussedPanel:
 		focussedPanel.release_focus()
 	focussedPanel = null
@@ -124,10 +124,10 @@ func updateCostLabels():
 	find_child("LabelRubyCost", true, false).text = ""
 	find_child("LabelIonic_dustCost", true, false).text = ""
 	find_child("LabelCryofluxCost", true, false).text = ""
-	
+
 	if not focussedPanel:
 		return
-	
+
 	var upgrade = GameWorld.upgrades[focussedPanel.techId]
 	var costs = upgrade.get("cost", [])
 	for costType in costs:

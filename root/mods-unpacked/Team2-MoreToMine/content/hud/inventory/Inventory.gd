@@ -36,7 +36,7 @@ func init():
 		label.name = "Label" + material["name"]
 		label.text = str(0)
 		gContainer.add_child(label)
-		
+
 	Data.listen(self, "inventory.copper")
 	Data.listen(self, "inventory.tungsten")
 	Data.listen(self, "inventory.quartz")
