@@ -6,16 +6,6 @@ var parts = ['magnetic_screws', 'sintered_metal', 'absorption_hull', 'micro_gear
 	'rail_track', 'magnetic_rail_system', 'cryo_magnet_rail_system', 'servo_motor', 'servo_drive', 'absorption_field_generator']
 
 func build(id:String, tier := -1):
-	Data.apply("inventory.iron", 10)
-	Data.apply("inventory.water", 10)
-	Data.apply("inventory.cobalt", 10)
-	Data.apply("inventory.copper", 10)
-	Data.apply("inventory.tungsten", 0)
-	Data.apply("inventory.quartz", 10)
-	Data.apply("inventory.ruby", 0)
-	Data.apply("inventory.ionic_dust", 0)
-	Data.apply("inventory.cryoflux", 0)
-
 	#0 iron, 1 water, 2 cobalt, 3 copper, 4 tungsten, 5 quartz, 6 ruby, 7 ionic_dust, 8 cryoflux
 	#9 magnetic_screws, 10 sintered_metal, 11 absorption_hull, 12 micro_gear, 13 liquefier
 	#14 coated_lens, 15 dampener_ring, 16 dynamic_dampener, 17 ruby_coated_lens
