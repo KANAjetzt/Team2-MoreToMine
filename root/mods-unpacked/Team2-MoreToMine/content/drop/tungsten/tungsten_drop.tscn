@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdnxsjh1u56sk"]
+[gd_scene load_steps=8 format=3 uid="uid://bdnxsjh1u56sk"]
 
 [ext_resource type="PackedScene" uid="uid://dqfg1lw7bije7" path="res://mods-unpacked/Team2-MoreToMine/content/drop/team_two_mineral_drop.tscn" id="1_t3yxb"]
 [ext_resource type="Resource" uid="uid://bx6hsyr68t3ds" path="res://mods-unpacked/Team2-MoreToMine/content/drop/tungsten/tungsten.tres" id="2_juvvw"]
 [ext_resource type="Texture2D" uid="uid://cw0rfbwfyw4u1" path="res://mods-unpacked/Team2-MoreToMine/content/drop/tungsten/tungsten_smol.png" id="3_absak"]
+[ext_resource type="Texture2D" uid="uid://ddtmcmo5rhann" path="res://mods-unpacked/Team2-MoreToMine/content/drop/tungsten/carried.png" id="4_1tyhw"]
+[ext_resource type="Texture2D" uid="uid://dsbhrejrlo1cx" path="res://mods-unpacked/Team2-MoreToMine/content/drop/tungsten/focussed.png" id="5_rtr70"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ga7r6"]
 resource_local_to_scene = true
@@ -18,6 +20,12 @@ data = ExtResource("2_juvvw")
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_absak")
+
+[node name="CarrySprite" parent="." index="1"]
+texture = ExtResource("4_1tyhw")
+
+[node name="FocusSprite" parent="." index="2"]
+texture = ExtResource("5_rtr70")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="5"]
 shape = SubResource("RectangleShape2D_342lv")

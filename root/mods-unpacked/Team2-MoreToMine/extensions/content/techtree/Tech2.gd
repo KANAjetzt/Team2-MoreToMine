@@ -15,8 +15,8 @@ func build(id:String, tier := -1):
 	#32 pivot_mechanism, 33 feedback_buffer, 34 rail_track, 35 magnetic_rail_system
 	#36 cryo_magnet_rail_system, 37 servo_motor, 38 servo_drive, 39 absorption_field_generator
 
-	for part in parts:
-		Data.apply("inventory." + part, 0)
+	#for part in parts:
+	#	Data.apply("inventory." + part, 0)
 
 	self.techId = id
 	var data = GameWorld.upgrades.get(id)

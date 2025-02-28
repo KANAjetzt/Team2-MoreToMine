@@ -86,14 +86,14 @@ energy_casing:
     - inventory.energy_casing += 1
   predecessors: [crafting2]
 fusion_cell:
-  cost: energy_casing=1, sintered_metal=1, phase_coil=1
+  cost: energy_casing=1, sintered_metal=1, phase_coil=1, ionic_dust=3
   repeatable: true
   craftable: true
   propertyChanges:
     - inventory.fusion_cell += 1
   predecessors: [energy_casing]
 plasma_cell:
-  cost: fusion_cell=1, cobalt=2, sintered_metal=1, phase_coil=1
+  cost: fusion_cell=1, sand=2, sintered_metal=1, phase_coil=1
   repeatable: true
   craftable: true
   propertyChanges:
@@ -196,7 +196,7 @@ feedback_buffer:
   predecessors: [overload_buffer]
 
 rail_track:
-  cost: cobalt=1, iron=2, water=1
+  cost: sand=1, iron=2, water=1
   repeatable: true
   craftable: true
   propertyChanges:
