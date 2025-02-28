@@ -15,7 +15,7 @@ func build(id:String, tier := -1):
 	Data.apply("inventory.ruby", 0)
 	Data.apply("inventory.ionic_dust", 0)
 	Data.apply("inventory.cryoflux", 0)
-	
+
 	#0 iron, 1 water, 2 cobalt, 3 copper, 4 tungsten, 5 quartz, 6 ruby, 7 ionic_dust, 8 cryoflux
 	#9 magnetic_screws, 10 sintered_metal, 11 absorption_hull, 12 micro_gear, 13 liquefier
 	#14 coated_lens, 15 dampener_ring, 16 dynamic_dampener, 17 ruby_coated_lens
@@ -24,10 +24,10 @@ func build(id:String, tier := -1):
 	#28 pulse_emitter, 29 modular_pulse_emitter, 30 modular_beam_emitter, 31 overload_buffer
 	#32 pivot_mechanism, 33 feedback_buffer, 34 rail_track, 35 magnetic_rail_system
 	#36 cryo_magnet_rail_system, 37 servo_motor, 38 servo_drive, 39 absorption_field_generator
-	
+
 	for part in parts:
 		Data.apply("inventory." + part, 0)
-	
+
 	self.techId = id
 	var data = GameWorld.upgrades.get(id)
 	visualTechId = data.get("shadowing", techId)
@@ -45,12 +45,12 @@ func build(id:String, tier := -1):
 		for costType in cost:
 			var label = Label.new()
 			label.horizontal_alignment = HorizontalAlignment.HORIZONTAL_ALIGNMENT_RIGHT
-			label.size_flags_horizontal = label.SIZE_EXPAND_FILL 
+			label.size_flags_horizontal = label.SIZE_EXPAND_FILL
 			label.text = str(cost[costType])
 			label.label_settings = preload("res://gui/fontsettings/NumbersFontSettings.tres")
 			costsBox.add_child(label)
 			costLabels[costType] = label
-			
+
 			var rect = TextureRect.new()
 			var no_style = false
 			rect.stretch_mode = TextureRect.STRETCH_KEEP
@@ -80,7 +80,7 @@ func build(id:String, tier := -1):
 				"cryoflux":
 					tex = preload("res://mods-unpacked/Team2-MoreToMine/content/drop/cryoflux/icon_cryoflux.png")
 					no_style = true
-					
+
 				"magnetic_screws":
 					tex = preload("res://mods-unpacked/Team2-MoreToMine/content/techtree/icons/magnetic_screws.png")
 					no_style = true
@@ -174,14 +174,14 @@ func build(id:String, tier := -1):
 				"absorption_field_generator":
 					tex = preload("res://mods-unpacked/Team2-MoreToMine/content/techtree/icons/absorption_field_generator.png")
 					no_style = true
-					
+
 			if no_style:
 				rect.material = null
 				rect.add_to_group("unstyled")
-			
+
 			rect.texture = tex
 			costsBox.add_child(rect)
-	
+
 	propertyChanges = data.get("propertychanges", [])
 	if data.has("overwriteTitleKey"):
 		title = tr(data.get("overwriteTitleKey"))
@@ -191,16 +191,16 @@ func build(id:String, tier := -1):
 		explanationBb = tr(data.get("overwriteDescKey"))
 	else:
 		explanationBb = GameWorld.iconify(tr("upgrades." + visualTechId + ".desc"))
-	
+
 	updateState()
-	
+
 	icon = Data.loadIconOrFallback("res://content/icons/" + visualTechId + ".png")
-	
+
 	if visualTechId in parts or visualTechId in ['crafting1', 'crafting2', 'crafting3']:
 		$Icon.add_to_group("unstyled")
-	
+
 	find_child("Icon").texture = icon
-	
+
 	_on_Tech_focus_exited()
 
 func updateState():
@@ -217,14 +217,14 @@ func updateState():
 	else:
 		isRepeatable = false
 	$RepetitionCountLabel.visible = repeatableTimes > 0
-	
+
 	$AnyAll.hide()
-	
+
 	var cost = tech.get("cost", [])
 	for costType in cost:
 		if costLabels.has(costType):
 			costLabels[costType].text = str(cost[costType])
-	
+
 	if state != State.INITIAL:
 		state = State.UNAVAILABLE
 		if GameWorld.lockedUpgrades.has(techId):
@@ -238,10 +238,10 @@ func updateState():
 					state = State.AVAILABLE
 				else:
 					state = State.UNAVAILABLE
-		
+
 		if not has_focus():
 			_on_Tech_focus_exited()
-	
+
 		var open = state == State.UNAVAILABLE or state == State.AVAILABLE
 		find_child("Costs").visible = open
 		var costsAmount = GameWorld.upgrades[techId].get("cost", []).size()
@@ -256,7 +256,7 @@ func updateState():
 							texture = preload("res://content/techtree/panels/one_reload_dark.png")
 					else:
 						texture = preload("res://content/techtree/panels/one_dark.png")
-					
+
 					if $AnyAll.visible:
 						$AnyAll.texture = preload("res://content/techtree/panels/lock_dark.png")
 					$SelectedPanel.texture = preload("res://content/techtree/panels/one_focus.png")
@@ -315,11 +315,11 @@ func updateState():
 					if $AnyAll.visible:
 						$AnyAll.texture = preload("res://content/techtree/panels/lock_dark.png")
 					$SelectedPanel.texture = preload("res://content/techtree/panels/zero_focus.png")
-	
+
 	pivot_offset = texture.get_size() * 0.5
-	
+
 	if tech.has("craftable"):
 		$RepetitionCountLabel.text = str(Data.of("inventory." + str(tech.get("id"))))
 		$RepetitionCountLabel.visible = true
 		texture = preload("res://content/techtree/panels/one_reload_extra_dark.png")
-	
+

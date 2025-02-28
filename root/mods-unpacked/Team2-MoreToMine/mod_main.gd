@@ -20,12 +20,6 @@ func _init() -> void:
 	install_script_extensions()
 	install_script_hook_files()
 
-	ModLoaderMod.install_script_extension(mod_dir_path + "/content/hud/inventory/Inventory.gd")
-	ModLoaderMod.install_script_extension(mod_dir_path + "/content/techtree/Tech2.gd")
-	ModLoaderMod.install_script_extension(mod_dir_path + "/content/techtree/TechTreePopup.gd")
-	ModLoaderLog.info("Adding translation: %s" % (mod_dir_path + "/translations/crafting_parts.en.translation"), TEAM2_MORE_TO_MINE_MOD_DIR)
-	ModLoaderMod.add_translation(mod_dir_path + "/translations/crafting_parts.en.translation")
-
 	# Add translations
 	add_translations()
 
@@ -37,6 +31,9 @@ func install_script_extensions() -> void:
 	ModLoaderMod.install_script_extension(extensions_dir_path.path_join("content/map/generation/TileDataGenerator.gd"))
 	ModLoaderMod.install_script_extension(extensions_dir_path.path_join("game/GameWorld.gd"))
 	ModLoaderMod.install_script_extension(extensions_dir_path.path_join("content/dome/shredder/Shredder.gd"))
+	ModLoaderMod.install_script_extension(extensions_dir_path.path_join("content/hud/inventory/Inventory.gd"))
+	ModLoaderMod.install_script_extension(extensions_dir_path.path_join("content/techtree/Tech2.gd"))
+	ModLoaderMod.install_script_extension(extensions_dir_path.path_join("content/techtree/TechTreePopup.gd"))
 
 
 func install_script_hook_files() -> void:
@@ -51,6 +48,8 @@ func install_script_hook_files() -> void:
 func add_translations() -> void:
 	translations_dir_path = mod_dir_path.path_join("translations")
 
+	ModLoaderMod.add_translation(translations_dir_path.path_join("crafting_parts.en.translation"))
+
 
 func _ready() -> void:
 	ModLoaderLog.debug("%s is ready!" % TEAM2_MORE_TO_MINE_MOD_DIR, TEAM2_MORE_TO_MINE_LOG_NAME)
@@ -59,6 +58,7 @@ func _ready() -> void:
 	for resource in globals.resources:
 		Data.DROP_ICONS[resource.type] = resource.icon
 		Data.DROP_SCENES[resource.type] = load(resource.drop_scene_path)
+
 
 func modInit() -> void:
 	var path_to_mod_yaml := "res://mods-unpacked/Team2-MoreToMine/yaml/upgrades.yaml"
