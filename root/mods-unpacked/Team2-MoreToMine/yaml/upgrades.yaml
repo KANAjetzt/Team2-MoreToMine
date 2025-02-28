@@ -56,7 +56,7 @@ nano_circuit_board:
     - inventory.nano_circuit_board += 2
   predecessors: [crafting1]
 data_matrix:
-  cost: nano_circuit_board=4, ruby=1, quartz=1
+  cost: nano_circuit_board=4, ruby=2, quartz=1
   repeatable: true
   craftable: true
   propertyChanges:
@@ -71,7 +71,7 @@ dampener_ring:
     - inventory.dampener_ring += 1
   predecessors: [crafting1]
 dynamic_dampener:
-  cost: dampener_ring=2, tungsten=2, sintered_metal=1
+  cost: dampener_ring=2, tungsten=3, sintered_metal=1
   repeatable: true
   craftable: true
   propertyChanges:
@@ -108,11 +108,11 @@ vacuum_energy_cell:
   predecessors: [plasma_cell]
 
 phase_coil:
-  cost: copper=2
+  cost: copper=1
   repeatable: true
   craftable: true
   propertyChanges:
-    - inventory.phase_coil += 1
+    - inventory.phase_coil += 4
   predecessors: [crafting3]
 coil_grid:
   cost: phase_coil=3, iron=1
@@ -123,21 +123,21 @@ coil_grid:
   predecessors: [phase_coil]
 
 coated_lens:
-  cost: water=1, quartz=2
+  cost: water=1, quartz=1
   repeatable: true
   craftable: true
   propertyChanges:
     - inventory.coated_lens += 1
   predecessors: [crafting2]
 lens_array:
-  cost: nano_circuit_board=1, sintered_metal=1, coated_lens=3
+  cost: nano_circuit_board=1, sintered_metal=1, coated_lens=2
   repeatable: true
   craftable: true
   propertyChanges:
     - inventory.lens_array += 1
   predecessors: [coated_lens]
 ruby_coated_lens:
-  cost: ruby=4, lens_array=1, ionic_dust=2
+  cost: ruby=5, lens_array=1, ionic_dust=2
   repeatable: true
   craftable: true
   propertyChanges:
@@ -158,7 +158,7 @@ modular_pulse_emitter:
     - inventory.modular_pulse_emitter += 1
   predecessors: [pulse_emitter]
 modular_beam_emitter:
-  cost: servo_motor=1, ruby_coated_lens=2, modular_pulse_emitter=2, absorption_hull=2
+  cost: servo_motor=1, ruby_coated_lens=2, modular_pulse_emitter=1, absorption_hull=2
   repeatable: true
   craftable: true
   propertyChanges:
@@ -166,14 +166,14 @@ modular_beam_emitter:
   predecessors: [modular_pulse_emitter]
 
 liquefier:
-  cost: ionic_dust=3, tungsten=1, iron=1
+  cost: ionic_dust=3, tungsten=2, iron=1
   repeatable: true
   craftable: true
   propertyChanges:
     - inventory.liquefier += 1
   predecessors: [crafting1]
 crystalic_filter:
-  cost: cryoflux=4, liquefier=1, ruby=1
+  cost: cryoflux=8, liquefier=1, ruby=2
   repeatable: true
   craftable: true
   propertyChanges:
@@ -181,14 +181,14 @@ crystalic_filter:
   predecessors: [liquefier]
   
 overload_buffer:
-  cost: absorption_hull=1, tungsten=3
+  cost: absorption_hull=1, tungsten=4
   repeatable: true
   craftable: true
   propertyChanges:
     - inventory.overload_buffer += 1
   predecessors: [crafting3]
 feedback_buffer:
-  cost: overload_buffer=2, cryoflux=2, lens_array=1
+  cost: overload_buffer=2, cryoflux=4, lens_array=1
   repeatable: true
   craftable: true
   propertyChanges:
@@ -218,7 +218,7 @@ cryo_magnet_rail_system:
   predecessors: [magnetic_rail_system]
 
 pivot_mechanism:
-  cost: tungsten=2, magnetic_screws=2, sintered_metal=1, micro_gear=1
+  cost: tungsten=4, magnetic_screws=2, sintered_metal=1, micro_gear=1
   repeatable: true
   craftable: true
   propertyChanges:
@@ -226,7 +226,7 @@ pivot_mechanism:
   predecessors: [micro_gear]
   
 absorption_field_generator:
-  cost: ruby=3, ruby_coated_lens=1, absorption_hull=2
+  cost: ruby=5, ruby_coated_lens=1, absorption_hull=2
   repeatable: true
   craftable: true
   propertyChanges:
@@ -252,7 +252,7 @@ laserStrength2:
     - laser.firedelay += 0.15
   predecessors: [laserStrength1]
 laserStrength3:
-  cost: modular_pulse_emitter=2, plasma_cell=2, overload_buffer=1
+  cost: modular_pulse_emitter=1, plasma_cell=2, overload_buffer=1
   propertyChanges: 
     - laser.dps = 110
     - laser.stun += 0.2
@@ -297,7 +297,7 @@ laserMove2:
     - laser.movespeed += 0.15
   predecessors: [laserMove1]
 laserMove3:
-  cost: magnetic_screws=6, servo_drive=2, cryo_magnet_rail_system=1, dynamic_dampener=1
+  cost: magnetic_screws=6, servo_drive=1, cryo_magnet_rail_system=1, dynamic_dampener=1
   propertyChanges: 
     - laser.movespeed += 0.2
   predecessors: [laserMove2]
