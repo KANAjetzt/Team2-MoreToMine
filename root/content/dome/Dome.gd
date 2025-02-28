@@ -23,6 +23,8 @@ var autoRepairAmount:float = 0.0
 var showcaseMode := false
 
 func vanilla_3454768771__ready():
+	ModLoaderLog.debug("I'm the fixed hooked Dome.gd here!", "Fixed-Hooked-Dome-GD")
+	
 	Style.init(self)
 
 	Level.addTutorial(self, "stationdefend")
