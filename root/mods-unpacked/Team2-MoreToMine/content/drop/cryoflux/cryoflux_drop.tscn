@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://4klb1i2ugbpq"]
+[gd_scene load_steps=8 format=3 uid="uid://4klb1i2ugbpq"]
 
 [ext_resource type="PackedScene" uid="uid://dqfg1lw7bije7" path="res://mods-unpacked/Team2-MoreToMine/content/drop/team_two_mineral_drop.tscn" id="1_k1bil"]
 [ext_resource type="Resource" uid="uid://e4lfrt6fun05" path="res://mods-unpacked/Team2-MoreToMine/content/drop/cryoflux/cryoflux.tres" id="2_tw4hd"]
 [ext_resource type="Texture2D" uid="uid://dfvn43rb4y0nt" path="res://mods-unpacked/Team2-MoreToMine/content/drop/cryoflux/cryoflux_smol.png" id="3_kv552"]
+[ext_resource type="Texture2D" uid="uid://ckd6gn5m7ik8l" path="res://mods-unpacked/Team2-MoreToMine/content/drop/cryoflux/carried.png" id="4_s4cjv"]
+[ext_resource type="Texture2D" uid="uid://bvpifefeg03lv" path="res://mods-unpacked/Team2-MoreToMine/content/drop/cryoflux/focussed.png" id="5_cmus6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rqj53"]
 resource_local_to_scene = true
@@ -18,6 +20,12 @@ data = ExtResource("2_tw4hd")
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_kv552")
+
+[node name="CarrySprite" parent="." index="1"]
+texture = ExtResource("4_s4cjv")
+
+[node name="FocusSprite" parent="." index="2"]
+texture = ExtResource("5_cmus6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="5"]
 shape = SubResource("RectangleShape2D_1vwjh")

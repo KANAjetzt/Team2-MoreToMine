@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://0qyi6yqhj4hf"]
+[gd_scene load_steps=8 format=3 uid="uid://0qyi6yqhj4hf"]
 
 [ext_resource type="PackedScene" uid="uid://dqfg1lw7bije7" path="res://mods-unpacked/Team2-MoreToMine/content/drop/team_two_mineral_drop.tscn" id="1_jcdta"]
 [ext_resource type="Resource" uid="uid://dui6w3ds2shsf" path="res://mods-unpacked/Team2-MoreToMine/content/drop/ruby/ruby.tres" id="2_da2a5"]
 [ext_resource type="Texture2D" uid="uid://cqfo2lqrwy346" path="res://mods-unpacked/Team2-MoreToMine/content/drop/ruby/ruby_smol.png" id="3_lfmvg"]
+[ext_resource type="Texture2D" uid="uid://cgj36up3g5cqd" path="res://mods-unpacked/Team2-MoreToMine/content/drop/ruby/carried.png" id="4_mjsct"]
+[ext_resource type="Texture2D" uid="uid://7o24x64kclai" path="res://mods-unpacked/Team2-MoreToMine/content/drop/ruby/focussed.png" id="5_7j06r"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jtaj4"]
 resource_local_to_scene = true
@@ -19,6 +21,12 @@ data = ExtResource("2_da2a5")
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_lfmvg")
+
+[node name="CarrySprite" parent="." index="1"]
+texture = ExtResource("4_mjsct")
+
+[node name="FocusSprite" parent="." index="2"]
+texture = ExtResource("5_7j06r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="5"]
 shape = SubResource("CapsuleShape2D_461ef")

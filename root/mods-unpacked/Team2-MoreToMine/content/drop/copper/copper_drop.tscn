@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dg3jw2sw5vphx"]
+[gd_scene load_steps=7 format=3 uid="uid://dg3jw2sw5vphx"]
 
 [ext_resource type="PackedScene" uid="uid://dqfg1lw7bije7" path="res://mods-unpacked/Team2-MoreToMine/content/drop/team_two_mineral_drop.tscn" id="1_cjs8y"]
 [ext_resource type="Resource" uid="uid://bbe8k5wpm5brj" path="res://mods-unpacked/Team2-MoreToMine/content/drop/copper/copper.tres" id="2_hx5kk"]
+[ext_resource type="Texture2D" uid="uid://cg44b5apm73bc" path="res://mods-unpacked/Team2-MoreToMine/content/drop/copper/carried.png" id="3_7kfqt"]
+[ext_resource type="Texture2D" uid="uid://cgonqx8pnu4a7" path="res://mods-unpacked/Team2-MoreToMine/content/drop/copper/focussed.png" id="4_3g0wx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_roldb"]
 resource_local_to_scene = true
@@ -14,6 +16,12 @@ size = Vector2(8, 8)
 [node name="CopperDrop" instance=ExtResource("1_cjs8y")]
 physics_material_override = SubResource("PhysicsMaterial_roldb")
 data = ExtResource("2_hx5kk")
+
+[node name="CarrySprite" parent="." index="1"]
+texture = ExtResource("3_7kfqt")
+
+[node name="FocusSprite" parent="." index="2"]
+texture = ExtResource("4_3g0wx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="5"]
 shape = SubResource("RectangleShape2D_5noig")

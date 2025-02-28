@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://1i8k58tl8ujh"]
+[gd_scene load_steps=7 format=3 uid="uid://1i8k58tl8ujh"]
 
 [ext_resource type="PackedScene" uid="uid://dqfg1lw7bije7" path="res://mods-unpacked/Team2-MoreToMine/content/drop/team_two_mineral_drop.tscn" id="1_1qimg"]
 [ext_resource type="Resource" uid="uid://cgaomj4xvq7ye" path="res://mods-unpacked/Team2-MoreToMine/content/drop/quartz/quartz.tres" id="2_jg8l5"]
 [ext_resource type="Texture2D" uid="uid://c44roohmbi7h6" path="res://mods-unpacked/Team2-MoreToMine/content/drop/quartz/quartz_smol.png" id="3_xmkf0"]
+[ext_resource type="Texture2D" uid="uid://b1nxreilkhm5g" path="res://mods-unpacked/Team2-MoreToMine/content/drop/quartz/carried.png" id="4_pf1a7"]
+[ext_resource type="Texture2D" uid="uid://vhj431o6xwql" path="res://mods-unpacked/Team2-MoreToMine/content/drop/quartz/focussed.png" id="5_c3ax0"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yxh3j"]
 resource_local_to_scene = true
@@ -15,6 +17,12 @@ data = ExtResource("2_jg8l5")
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_xmkf0")
+
+[node name="CarrySprite" parent="." index="1"]
+texture = ExtResource("4_pf1a7")
+
+[node name="FocusSprite" parent="." index="2"]
+texture = ExtResource("5_c3ax0")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="5"]
 polygon = PackedVector2Array(-1, -6, 2, -6, 2, -4, 4, -4, 4, -1, 6, -1, 6, 4, 4, 6, -4, 6, -6, 4, -6, 0, -3, 0, -3, -4)
