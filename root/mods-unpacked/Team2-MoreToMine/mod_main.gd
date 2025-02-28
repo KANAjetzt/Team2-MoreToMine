@@ -11,7 +11,7 @@ var mod_dir_path := ""
 var extensions_dir_path := ""
 var translations_dir_path := ""
 
-var globals: Team2Globals = load("res://mods-unpacked/Team2-MoreToMine/data/globals.tres")
+var globals = load("res://mods-unpacked/Team2-MoreToMine/data/globals.tres")
 
 
 func _init() -> void:

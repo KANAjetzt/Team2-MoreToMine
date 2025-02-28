@@ -1,6 +1,6 @@
 extends Drop
 
-@export var data: Team2ResourceData
+@export var data: Resource
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var carry_sprite: Sprite2D = $CarrySprite

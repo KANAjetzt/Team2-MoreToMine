@@ -16,7 +16,7 @@ func setType(chain: ModLoaderHookChain, type:String):
 
 	var main_node : Node = chain.reference_object
 	var mod_node := main_node.get_node("/root/ModLoader/Team2-MoreToMine")
-	var globals: Team2Globals = mod_node.globals
+	var globals = mod_node.globals
 
 	main_node.type = type
 

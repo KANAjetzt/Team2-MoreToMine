@@ -5,7 +5,7 @@ func init(chain: ModLoaderHookChain, fromDeserialize := false, generateChambers 
 	chain.execute_next([fromDeserialize, generateChambers])
 	var main_node : Node = chain.reference_object
 	var mod_node := main_node.get_node("/root/ModLoader/Team2-MoreToMine")
-	var globals: Team2Globals = mod_node.globals
+	var globals = mod_node.globals
 
 	for resource in globals.resources:
 		main_node.tilesByType[resource.type] = []
@@ -14,7 +14,7 @@ func init(chain: ModLoaderHookChain, fromDeserialize := false, generateChambers 
 
 func isResourceTile(chain: ModLoaderHookChain, typeId: int) -> bool:
 	var mod_node: Node = chain.reference_object.get_node("/root/ModLoader/Team2-MoreToMine")
-	var globals: Team2Globals = mod_node.globals
+	var globals = mod_node.globals
 
 	var result: bool = chain.execute_next([typeId])
 
@@ -28,7 +28,7 @@ func isResourceTile(chain: ModLoaderHookChain, typeId: int) -> bool:
 func revealTile(chain: ModLoaderHookChain, coord:Vector2):
 	var main_node : Node = chain.reference_object
 	var mod_node := main_node.get_node("/root/ModLoader/Team2-MoreToMine")
-	var globals: Team2Globals = mod_node.globals
+	var globals = mod_node.globals
 	var is_modded_resource := false
 
 	var typeId:int = main_node.tileData.get_resource(coord.x, coord.y)
@@ -94,7 +94,7 @@ func destroyTile(chain: ModLoaderHookChain, tile, withDropsAndSound := true):
 
 	var main_node : Node = chain.reference_object
 	var mod_node := main_node.get_node("/root/ModLoader/Team2-MoreToMine")
-	var globals: Team2Globals = mod_node.globals
+	var globals = mod_node.globals
 	var is_modded_tile := false
 
 	for resource in globals.resources:

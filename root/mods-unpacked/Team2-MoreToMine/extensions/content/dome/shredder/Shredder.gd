@@ -2,7 +2,7 @@ extends "res://content/dome/shredder/Shredder.gd"
 
 
 @onready var team_2_mod_node: Node = ModLoader.get_node("Team2-MoreToMine")
-@onready var team_2_globals: Team2Globals = team_2_mod_node.globals
+@onready var team_2_globals = team_2_mod_node.globals
 
 
 func _on_Shredder_area_entered(area):

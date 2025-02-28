@@ -9,7 +9,7 @@ var team_2_mod_node: Node = ModLoader.get_node("Team2-MoreToMine")
 func init(archetype:MapArchetype, randSeed):
 	super.init(archetype, randSeed)
 
-	var globals: Team2Globals = team_2_mod_node.globals
+	var globals = team_2_mod_node.globals
 
 	adjust_archetype_values("water_rate", globals.water_spawn_rate_multiplier)
 	adjust_archetype_values("cobalt_rate", globals.cobalt_spawn_rate_multiplier)
@@ -22,7 +22,7 @@ func init(archetype:MapArchetype, randSeed):
 func generate_resources(rand):
 	super.generate_resources(rand)
 
-	var globals: Team2Globals = team_2_mod_node.globals
+	var globals = team_2_mod_node.globals
 
 	for resource in globals.resources:
 		if resource.spawn_as_cluster:
@@ -52,21 +52,21 @@ func generate_resources(rand):
 						break
 
 				# debugging purposes
-				if GameWorld.devMode or OS.is_debug_build():
-					$MapData.set_resourcev(Vector2(0, 2) , 42)
+				$MapData.set_resourcev(Vector2(0, 2) , 42)
 
 
 func generate_iron_clusters(original_cell_coords, borderCells):
 	super.generate_iron_clusters(original_cell_coords, borderCells)
 
-	var globals: Team2Globals = team_2_mod_node.globals
+	var globals = team_2_mod_node.globals
 
 	for resource in globals.resources:
 		if resource.spawn_as_cluster:
+			ModLoaderLog.debug.call_deferred("Generating cluster for %s" % resource.type, TEAM2_MORE_TO_MINE_LOG_NAME)
 			generate_clusters(original_cell_coords, borderCells, resource)
 
 
-func generate_clusters(original_cell_coords, borderCells, resource_data: Team2ResourceData):
+func generate_clusters(original_cell_coords, borderCells, resource_data):
 	var ClusterAmount = round(resource_data.cluster_rate * 0.001 * original_cell_coords.size())
 
 	for i in ClusterAmount:
@@ -120,7 +120,7 @@ func generate_clusters(original_cell_coords, borderCells, resource_data: Team2Re
 #					break
 
 
-func expand_clusters(ClusterCenters, resource_data: Team2ResourceData):
+func expand_clusters(ClusterCenters, resource_data):
 	for cell in ClusterCenters:
 		var cluster := [cell]
 		var goalSize = round(resource_data.cluster_size_base + cell.y * (resource_data.cluster_size_per_y - resource_data.cluster_size_randomness * 0.5 + resource_data.cluster_size_randomness * rand.randf()))
@@ -147,5 +147,4 @@ func adjust_archetype_values(prop_name: String, multiplier: float) -> void:
 
 
 func print_generated_resource(cell, resource_name: String):
-	if GameWorld.devMode or OS.is_debug_build():
-		ModLoaderLog.debug.call_deferred("Generated \"%s\" at: \"%s\"" % [resource_name, cell], TEAM2_MORE_TO_MINE_LOG_NAME)
+	ModLoaderLog.debug.call_deferred("Generated \"%s\" at: \"%s\"" % [resource_name, cell], TEAM2_MORE_TO_MINE_LOG_NAME)
