@@ -5,6 +5,7 @@ const TEAM2_MORE_TO_MINE_MOD_DIR := "Team2-MoreToMine"
 const TEAM2_MORE_TO_MINE_LOG_NAME := "Team2-MoreToMine:Main"
 const DOME_UPGRADE_NAME_1 = "crafting1"
 const DOME_UPGRADE_NAME_2 = "crafting2"
+const DOME_UPGRADE_NAME_3 = "crafting3"
 
 var mod_dir_path := ""
 var extensions_dir_path := ""
@@ -22,6 +23,8 @@ func _init() -> void:
 	ModLoaderMod.install_script_extension(mod_dir_path + "/content/hud/inventory/Inventory.gd")
 	ModLoaderMod.install_script_extension(mod_dir_path + "/content/techtree/Tech2.gd")
 	ModLoaderMod.install_script_extension(mod_dir_path + "/content/techtree/TechTreePopup.gd")
+	ModLoaderLog.info("Adding translation: %s" % (mod_dir_path + "/translations/crafting_parts.en.translation"), TEAM2_MORE_TO_MINE_MOD_DIR)
+	ModLoaderMod.add_translation(mod_dir_path + "/translations/crafting_parts.en.translation")
 
 	# Add translations
 	add_translations()
@@ -70,4 +73,9 @@ func modInit() -> void:
 	StageManager.level_ready.connect(
 		func unlock():
 			GameWorld.addUpgrade(DOME_UPGRADE_NAME_2)
+	)
+	GameWorld.unlockedElements.push_back(DOME_UPGRADE_NAME_3)
+	StageManager.level_ready.connect(
+		func unlock():
+			GameWorld.addUpgrade(DOME_UPGRADE_NAME_3)
 	)

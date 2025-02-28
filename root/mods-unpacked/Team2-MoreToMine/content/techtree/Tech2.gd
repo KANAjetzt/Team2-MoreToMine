@@ -196,7 +196,7 @@ func build(id:String, tier := -1):
 	
 	icon = Data.loadIconOrFallback("res://content/icons/" + visualTechId + ".png")
 	
-	if visualTechId in parts or visualTechId in ['crafting1', 'crafting2']:
+	if visualTechId in parts or visualTechId in ['crafting1', 'crafting2', 'crafting3']:
 		$Icon.add_to_group("unstyled")
 	
 	find_child("Icon").texture = icon

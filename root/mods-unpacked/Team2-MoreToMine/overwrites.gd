@@ -67,3 +67,5 @@ func _init() -> void:
 	icon_overwrite32.take_over_path("res://content/icons/vacuum_energy_cell.png")
 	var icon_overwrite33 := preload("res://mods-unpacked/Team2-MoreToMine/overwrites/content/icons/crafting2.png")
 	icon_overwrite33.take_over_path("res://content/icons/crafting2.png")
+	var icon_overwrite34 := preload("res://mods-unpacked/Team2-MoreToMine/overwrites/content/icons/crafting3.png")
+	icon_overwrite34.take_over_path("res://content/icons/crafting3.png")

@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://df60r72uqictu"
+
+[deps]
+
+files=["res://mods-unpacked/Team2-MoreToMine/translations/crafting_parts.en.translation"]
+
+source_file="res://mods-unpacked/Team2-MoreToMine/translations/crafting_parts.csv"
+dest_files=["res://mods-unpacked/Team2-MoreToMine/translations/crafting_parts.en.translation"]
+
+[params]
+
+compress=true
+delimiter=0

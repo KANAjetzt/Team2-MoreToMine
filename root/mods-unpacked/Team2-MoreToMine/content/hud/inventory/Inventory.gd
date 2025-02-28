@@ -12,13 +12,6 @@ func init():
 	#36 cryo_magnet_rail_system, 37 servo_motor, 38 servo_drive, 39 absorption_field_generator
 	cache = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 	set("element_size", Vector2(8, 18))
-	Data.listen(self, "inventory.copper", true)
-	Data.listen(self, "inventory.tungsten", true)
-	Data.listen(self, "inventory.quartz", true)
-	Data.listen(self, "inventory.ruby", true)
-	Data.listen(self, "inventory.ionic_dust", true)
-	Data.listen(self, "inventory.cryoflux", true)
-	
 	var gContainer = $GridContainer
 	var materials = [
 	{ "name": "Copper", "texture": "res://mods-unpacked/Team2-MoreToMine/content/drop/copper/icon_copper.png" },
@@ -43,6 +36,13 @@ func init():
 		label.name = "Label" + material["name"]
 		label.text = str(0)
 		gContainer.add_child(label)
+		
+	Data.listen(self, "inventory.copper")
+	Data.listen(self, "inventory.tungsten")
+	Data.listen(self, "inventory.quartz")
+	Data.listen(self, "inventory.ruby")
+	Data.listen(self, "inventory.ionic_dust")
+	Data.listen(self, "inventory.cryoflux")
 
 func propertyChanged(property:String, oldValue, newValue):
 	match property:
