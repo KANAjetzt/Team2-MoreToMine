@@ -11,11 +11,12 @@ func init(archetype:MapArchetype, randSeed):
 
 	var globals: Team2Globals = team_2_mod_node.globals
 
-	if not globals.water_spawn_rate_multiplier == 1.0:
-		ModLoaderLog.debug.call_deferred("Adjusted water_rate from %s" % a.water_rate, TEAM2_MORE_TO_MINE_LOG_NAME)
-		a.water_rate *= globals.water_spawn_rate_multiplier
-		ModLoaderLog.debug.call_deferred("Adjusted water_rate to %s" % a.water_rate, TEAM2_MORE_TO_MINE_LOG_NAME)
-		ModLoaderLog.debug.call_deferred("Adjusted water_rate multiplied by %s" % globals.water_spawn_rate_multiplier, TEAM2_MORE_TO_MINE_LOG_NAME)
+
+	adjust_archetype_values("water_rate", globals.water_spawn_rate_multiplier)
+	adjust_archetype_values("iron_cluster_rate", globals.iron_cluster_rate_multiplier)
+	adjust_archetype_values("iron_cluster_size_base", globals.iron_cluster_size_base_multiplier)
+	adjust_archetype_values("iron_cluster_size_per_y", globals.iron_cluster_size_per_y_multiplier)
+	adjust_archetype_values("iron_cluster_size_randomness", globals.iron_cluster_size_randomness_multiplier)
 
 
 func generate_resources(rand):
@@ -134,6 +135,15 @@ func expand_clusters(ClusterCenters, resource_data: Team2ResourceData):
 					$MapData.set_resourcev(neighbor, resource_data.tile_id)
 					cluster.append(neighbor)
 					break
+
+
+func adjust_archetype_values(prop_name: String, multiplier: float) -> void:
+	if multiplier == 1.0:
+		return
+	ModLoaderLog.debug.call_deferred("Adjusted %s from %s" % [prop_name, a[prop_name]], TEAM2_MORE_TO_MINE_LOG_NAME)
+	a[prop_name] *= multiplier
+	ModLoaderLog.debug.call_deferred("Adjusted %s to %s" % [prop_name, a[prop_name]], TEAM2_MORE_TO_MINE_LOG_NAME)
+	ModLoaderLog.debug.call_deferred("Adjusted %s multiplied by %s" % [prop_name, multiplier], TEAM2_MORE_TO_MINE_LOG_NAME)
 
 
 func print_generated_resource(cell, resource_name: String):
