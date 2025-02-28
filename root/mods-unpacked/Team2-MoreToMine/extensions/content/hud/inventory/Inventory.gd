@@ -1,5 +1,6 @@
 extends "res://content/hud/inventory/Inventory.gd"
 
+
 func init():
 	super.init()
 	#0 iron, 1 water, 2 cobalt, 3 copper, 4 tungsten, 5 quartz, 6 ruby, 7 ionic_dust, 8 cryoflux
@@ -11,7 +12,8 @@ func init():
 	#32 pivot_mechanism, 33 feedback_buffer, 34 rail_track, 35 magnetic_rail_system
 	#36 cryo_magnet_rail_system, 37 servo_motor, 38 servo_drive, 39 absorption_field_generator
 	cache = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-	set("element_size", Vector2(8, 18))
+	element_size = Vector2(5, 18)
+	request_rebuild.emit()
 	var gContainer = $GridContainer
 	var materials = [
 	{ "name": "Copper", "texture": "res://mods-unpacked/Team2-MoreToMine/content/drop/copper/icon_copper.png" },
@@ -82,3 +84,42 @@ func propertyChanged(property:String, oldValue, newValue):
 			cache[8] = newValue
 			updateSize()
 			$GridContainer/LabelCryoflux.text = str(newValue)
+
+
+func updateSize():
+	super.updateSize()
+
+	var label_copper = $GridContainer/LabelCopper
+	var width_default = 5
+	var width_extended = 6
+
+	if not label_copper:
+		return
+
+	var limit := 0
+	for v in cache:
+		limit = max(v, limit)
+	if limit >= 100 and element_size.x != width_extended:
+		element_size.x = width_extended
+		%LabelIron.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+		%LabelWater.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+		%LabelSand.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+		$GridContainer/LabelCopper.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+		$GridContainer/LabelTungsten.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+		$GridContainer/LabelQuartz.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+		$GridContainer/LabelRuby.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+		$GridContainer/LabelIonic_dust.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+		$GridContainer/LabelCryoflux.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+		request_rebuild.emit()
+	elif limit < 100 and element_size.x != width_default:
+		element_size.x = width_default
+		%LabelIron.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+		%LabelWater.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+		%LabelSand.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+		$GridContainer/LabelCopper.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+		$GridContainer/LabelTungsten.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+		$GridContainer/LabelQuartz.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+		$GridContainer/LabelRuby.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+		$GridContainer/LabelIonic_dust.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+		$GridContainer/LabelCryoflux.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+		request_rebuild.emit()
