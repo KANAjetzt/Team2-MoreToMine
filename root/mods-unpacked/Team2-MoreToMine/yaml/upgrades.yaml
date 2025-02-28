@@ -1,5 +1,7 @@
 crafting1:
   type: gadget
+crafting3:
+  type: gadget
 crafting2:
   type: gadget
 magnetic_screws:
@@ -7,24 +9,24 @@ magnetic_screws:
   repeatable: true
   craftable: true
   propertyChanges:
-    - inventory.magnetic_screws += 3
-  predecessors: [crafting1]
+    - inventory.magnetic_screws += 4
+  predecessors: [crafting3]
 micro_gear:
   cost: iron=1, magnetic_screws=2, phase_coil=1
   repeatable: true
   craftable: true
   propertyChanges:
-    - inventory.micro_gear += 1
+    - inventory.micro_gear += 2
   predecessors: [magnetic_screws]
 servo_motor:
-  cost: micro_gear=2, magnetic_screws=3, coil_grid=1
+  cost: micro_gear=2, magnetic_screws=2, coil_grid=1
   repeatable: true
   craftable: true
   propertyChanges:
     - inventory.servo_motor += 1
   predecessors: [micro_gear]
 servo_drive:
-  cost: servo_motor=1, data_matrix=2, coil_grid=2
+  cost: servo_motor=1, data_matrix=1, coil_grid=2
   repeatable: true
   craftable: true
   propertyChanges:
@@ -36,7 +38,7 @@ sintered_metal:
   repeatable: true
   craftable: true
   propertyChanges:
-    - inventory.sintered_metal += 1
+    - inventory.sintered_metal += 2
   predecessors: [crafting1]
 absorption_hull:
   cost: sintered_metal=1, water=1, quartz=2, copper=2
@@ -47,19 +49,34 @@ absorption_hull:
   predecessors: [sintered_metal]
 
 nano_circuit_board:
-  cost: iron=1, copper=1, quartz=3
+  cost: iron=1, copper=1, quartz=2
   repeatable: true
   craftable: true
   propertyChanges:
     - inventory.nano_circuit_board += 2
   predecessors: [crafting1]
 data_matrix:
-  cost: nano_circuit_board=5, ruby=1, quartz=1
+  cost: nano_circuit_board=4, ruby=1, quartz=1
   repeatable: true
   craftable: true
   propertyChanges:
     - inventory.data_matrix += 1
   predecessors: [nano_circuit_board]
+  
+dampener_ring:
+  cost: ionic_dust=2, copper=1
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.dampener_ring += 1
+  predecessors: [crafting1]
+dynamic_dampener:
+  cost: dampener_ring=2, tungsten=2, sintered_metal=1
+  repeatable: true
+  craftable: true
+  propertyChanges:
+    - inventory.dynamic_dampener += 1
+  predecessors: [dampener_ring]
 
 energy_casing:
   cost: iron=1, quartz=2
@@ -76,14 +93,14 @@ fusion_cell:
     - inventory.fusion_cell += 1
   predecessors: [energy_casing]
 plasma_cell:
-  cost: fusion_cell=1, cobalt=2, sintered_metal=2, phase_coil=1
+  cost: fusion_cell=1, cobalt=2, sintered_metal=1, phase_coil=1
   repeatable: true
   craftable: true
   propertyChanges:
     - inventory.plasma_cell += 1
   predecessors: [fusion_cell]
 vacuum_energy_cell:
-  cost: plasma_cell=1, crystalic_filter=2, absorption_hull=2, coil_grid=1
+  cost: plasma_cell=1, crystalic_filter=2, absorption_hull=1, coil_grid=1
   repeatable: true
   craftable: true
   propertyChanges:
@@ -96,7 +113,7 @@ phase_coil:
   craftable: true
   propertyChanges:
     - inventory.phase_coil += 1
-  predecessors: [crafting1]
+  predecessors: [crafting3]
 coil_grid:
   cost: phase_coil=3, iron=1
   repeatable: true
@@ -149,14 +166,14 @@ modular_beam_emitter:
   predecessors: [modular_pulse_emitter]
 
 liquefier:
-  cost: ionic_dust=3, tungsten=1, iron=2
+  cost: ionic_dust=3, tungsten=1, iron=1
   repeatable: true
   craftable: true
   propertyChanges:
     - inventory.liquefier += 1
   predecessors: [crafting1]
 crystalic_filter:
-  cost: cryoflux=2, ruby=1
+  cost: cryoflux=4, liquefier=1, ruby=1
   repeatable: true
   craftable: true
   propertyChanges:
@@ -169,7 +186,7 @@ overload_buffer:
   craftable: true
   propertyChanges:
     - inventory.overload_buffer += 1
-  predecessors: [crafting1]
+  predecessors: [crafting3]
 feedback_buffer:
   cost: overload_buffer=2, cryoflux=2, lens_array=1
   repeatable: true
@@ -179,14 +196,14 @@ feedback_buffer:
   predecessors: [overload_buffer]
 
 rail_track:
-  cost: cobalt=1, iron=4, water=2
+  cost: cobalt=1, iron=2, water=1
   repeatable: true
   craftable: true
   propertyChanges:
     - inventory.rail_track += 1
-  predecessors: [crafting1]
+  predecessors: [crafting3]
 magnetic_rail_system:
-  cost: rail_track=1, coil_grid=2
+  cost: rail_track=1, coil_grid=2, liquefier=1
   repeatable: true
   craftable: true
   propertyChanges:
@@ -201,7 +218,7 @@ cryo_magnet_rail_system:
   predecessors: [magnetic_rail_system]
 
 pivot_mechanism:
-  cost: tungsten=3, magnetic_screws=4, sintered_metal=1, micro_gear=2
+  cost: tungsten=2, magnetic_screws=2, sintered_metal=1, micro_gear=1
   repeatable: true
   craftable: true
   propertyChanges:
@@ -209,7 +226,7 @@ pivot_mechanism:
   predecessors: [micro_gear]
   
 absorption_field_generator:
-  cost: ruby=3, ruby_coated_lens=2, absorption_hull=2
+  cost: ruby=3, ruby_coated_lens=1, absorption_hull=2
   repeatable: true
   craftable: true
   propertyChanges:
@@ -260,7 +277,7 @@ laserhitprojectiles:
     - laser.hitprojectiles = true
   predecessors: [laserStrength2]
 laserBend:
-  cost: servo_motor=1, data_matrix=2, pivot_mechanism=3
+  cost: servo_motor=1, data_matrix=2, pivot_mechanism=2
   propertyChanges: 
     - laser.bend = 6
   predecessors: [laserMove1]
@@ -270,7 +287,7 @@ laserAimLine:
     - laser.aimLine = true
   predecessors: [laser]
 laserMove1:
-  cost: magnetic_screws=4, micro_gear=2, rail_track=1
+  cost: magnetic_screws=2, micro_gear=2, rail_track=1
   propertyChanges: 
     - laser.movespeed += 0.1
   predecessors: [laser]

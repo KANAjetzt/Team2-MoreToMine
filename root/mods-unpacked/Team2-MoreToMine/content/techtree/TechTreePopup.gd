@@ -138,8 +138,9 @@ func updateCostLabels():
 			newInventory = 0
 		if newInventory < 0:
 			color = Style.FONT_COLOR_WARNING
-		if costType in ["iron", "water", "sand", "copper", "tungsten", "quartz", "ruby", "ionic_dust", "cryoflux"]:
-			print("----------------")
-			print(costType)
+		if costType in ["iron", "water", "sand", "copper", "tungsten", "quartz", "ruby", "cryoflux"]:
 			find_child("Label"+costType.capitalize()+"Cost", true, false).text = "%s" % cost
 			find_child("Label"+costType.capitalize()+"Cost", true, false).label_settings.font_color = color
+		elif costType == 'ionic_dust':
+			find_child("LabelIonic_dustCost", true, false).text = "%s" % cost
+			find_child("LabelIonic_dustCost", true, false).label_settings.font_color = color
