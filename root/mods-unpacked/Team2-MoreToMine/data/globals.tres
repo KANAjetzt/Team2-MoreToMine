@@ -11,3 +11,4 @@
 [resource]
 script = ExtResource("1_2huyq")
 resources = Array[Resource("res://mods-unpacked/Team2-MoreToMine/data/_scripts/resource.gd")]([ExtResource("1_3nmi7"), ExtResource("2_xsm8j"), ExtResource("3_578lc"), ExtResource("4_jo1te"), ExtResource("5_oyx1a"), ExtResource("6_rhrs4")])
+water_spawn_rate_multiplier = 4.0

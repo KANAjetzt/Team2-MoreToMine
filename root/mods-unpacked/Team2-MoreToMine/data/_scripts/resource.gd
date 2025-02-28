@@ -43,3 +43,12 @@ extends Resource
 ## Example: 1.0 = ends to spawn at the end of the map.
 ## Example: 0.5 = will stop spawning at half of the maps depth.
 @export_range(0.0, 1.0) var spawn_depth_max_multiplier := 1.0
+@export var spawn_as_cluster := false
+@export var cluster_rate := 10.0
+@export var cluster_size_base := 1.5
+@export var cluster_size_per_y := 0.2
+@export var cluster_size_randomness := 0.02
+
+# Not used currently, I hope we can get away by using lower base rates.
+# @export var cluster_removal_rate := 0.2
+
