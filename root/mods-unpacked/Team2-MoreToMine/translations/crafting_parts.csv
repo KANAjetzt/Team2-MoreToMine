@@ -1,69 +1,69 @@
 keys,en
 upgrades.crafting1.title,Smelting
-upgrades.crafting1.desc,Smelting stuff
+upgrades.crafting1.desc,Smelt your raw resources to create important parts for your work as a dome keeper.
 upgrades.crafting2.title,Optics
-upgrades.crafting2.desc,Looking at stuff
+upgrades.crafting2.desc,Create powerful optical materials.
 upgrades.crafting3.title,Crafting
-upgrades.crafting3.desc,Crafting stuff
+upgrades.crafting3.desc,Years of research went into the creation of this intricate building plans.
 upgrades.magnetic_screws.title,Magnetic Screws
 upgrades.magnetic_screws.desc,Nothing fancy just some magnetic screws.
 upgrades.micro_gear.title,Micro Gear
 upgrades.micro_gear.desc,Like any gear but way smaller. (really really really small).
 upgrades.servo_motor.title,Servo Motor
-upgrades.servo_motor.desc,Like any gear but way smaller. (really really really small).
+upgrades.servo_motor.desc,Used to pivot rotate accelerate.
 upgrades.servo_drive.title,Servo Drive
-upgrades.servo_drive.desc,Like any gear but way smaller. (really really really small).
+upgrades.servo_drive.desc,powerful motor to drive the biggest tooles.
 upgrades.sintered_metal.title,Sintered Metal
 upgrades.sintered_metal.desc,Sintering or frittage is the process of compacting and forming a solid mass of material by pressure and heat without melting it to the point of liquefaction. (Also looks like a waffle).
 upgrades.absorption_hull.title,Absorption Hull
 upgrades.absorption_hull.desc,Nothing will penetrate this!
 upgrades.nano_circuit_board.title,Nano Circuit Board
-upgrades.nano_circuit_board.desc,Like any gear but way smaller. (really really really small).
+upgrades.nano_circuit_board.desc,The base for successful computing.
 upgrades.data_matrix.title,Data Matrix
-upgrades.data_matrix.desc,Like any gear but way smaller. (really really really small).
+upgrades.data_matrix.desc,Stores up to 50 Hekto Bits and can be accessed with a woping 0.5 deka bits per second.
 upgrades.dampener_ring.title,Dampener Ring
 upgrades.dampener_ring.desc,Absorbent.
 upgrades.dynamic_dampener.title,Dynamic Dampener
 upgrades.dynamic_dampener.desc,Absorbent but only if you need it.
 upgrades.energy_casing.title,Energy Casing
-upgrades.energy_casing.desc,Holds various kinds of energy provider.
+upgrades.energy_casing.desc,Holds various kinds of energy providers.
 upgrades.fusion_cell.title,Fusion Cell
-upgrades.fusion_cell.desc,Cell fusion is an important cellular process in which several uninucleate cells (cells with a single nucleus) combine to form a multinucleate cell.
+upgrades.fusion_cell.desc,Cell fusion is an important cellular process in which several uninucleate cells (cells with a single nucleus) combine to form a multinucleate cell. Can also be used to look into the future.
 upgrades.plasma_cell.title,Plasma Cell
-upgrades.plasma_cell.desc,Like any gear but way smaller. (really really really small).
+upgrades.plasma_cell.desc,One of four fundamental states of matter neatly packed into a glass container.
 upgrades.vacuum_energy_cell.title,Vacuum Energy Cell
 upgrades.vacuum_energy_cell.desc,Provides 1.21 jigowatts of power!
 upgrades.phase_coil.title,Phase Coil
-upgrades.phase_coil.desc,Like any gear but way smaller. (really really really small).
+upgrades.phase_coil.desc,Buzing with energy.
 upgrades.coil_grid.title,Coil Grid
-upgrades.coil_grid.desc,Like any gear but way smaller. (really really really small).
+upgrades.coil_grid.desc,All good things come in threes.
 upgrades.coated_lens.title,Coated Lens
 upgrades.coated_lens.desc,Coated with blood sweat and tears.
 upgrades.lens_array.title,Lens Array
 upgrades.lens_array.desc,Glass lots of glass.
 upgrades.ruby_coated_lens.title,Ruby-Coated Lens
-upgrades.ruby_coated_lens.desc,Molded from the precious red stone, to create a red beam that will haunt your enemies.
+upgrades.ruby_coated_lens.desc,Molded from the precious red stone to create a red beam that will haunt your enemies.
 upgrades.pulse_emitter.title,Pulse Emitter
-upgrades.pulse_emitter.desc,Like any gear but way smaller. (really really really small).
+upgrades.pulse_emitter.desc,With enough power the pulse emitter will emit a powerful pulse. (Also looks like a mushroom).
 upgrades.modular_pulse_emitter.title,Modular Pulse Emitter
-upgrades.modular_pulse_emitter.desc,Like any gear but way smaller. (really really really small).
+upgrades.modular_pulse_emitter.desc,Bigger faster stronger then your average Pulse Emitter.
 upgrades.modular_beam_emitter.title,Modular Beam Emitter
-upgrades.modular_beam_emitter.desc,Like any gear but way smaller. (really really really small).
+upgrades.modular_beam_emitter.desc,A powerful part that will unlock your domes full potential. (Also looks a bit like a hazelnut).
 upgrades.liquefier.title,Liquefier
-upgrades.liquefier.desc,Can be used to liquefy any material, including oranges.
+upgrades.liquefier.desc,Can be used to liquefy any material including oranges.
 upgrades.crystalic_filter.title,Crystalic Filter
-upgrades.crystalic_filter.desc,Like any gear but way smaller. (really really really small).
+upgrades.crystalic_filter.desc,Only the purest.
 upgrades.overload_buffer.title,Overload Buffer
-upgrades.overload_buffer.desc,Like any gear but way smaller. (really really really small).
+upgrades.overload_buffer.desc,A very strong pipe.
 upgrades.feedback_buffer.title,Feedback Buffer
-upgrades.feedback_buffer.desc,Like any gear but way smaller. (really really really small).
+upgrades.feedback_buffer.desc,If one very strong pipe is not enough try two.
 upgrades.rail_track.title,Rail Track
-upgrades.rail_track.desc,Like any gear but way smaller. (really really really small).
+upgrades.rail_track.desc,A basic rail track.
 upgrades.magnetic_rail_system.title,Magnetic Rail System
-upgrades.magnetic_rail_system.desc,Like any gear but way smaller. (really really really small).
+upgrades.magnetic_rail_system.desc,For maximum smoothness we recommend Magnetic Rail Systems!
 upgrades.cryo_magnet_rail_system.title,Cryo-Magnet Rail System
-upgrades.cryo_magnet_rail_system.desc,Like any gear but way smaller. (really really really small).
+upgrades.cryo_magnet_rail_system.desc,Are your Magnetic Rail Systems getting to hot? Try our new Cryo Addon Now! (while stocks last)
 upgrades.pivot_mechanism.title,Pivot Mechanism
-upgrades.pivot_mechanism.desc,Like any gear but way smaller. (really really really small).
+upgrades.pivot_mechanism.desc,Attach this to a Servo Motor and you will expiriance a pivotal moment.
 upgrades.absorption_field_generator.title,Absorption Field Generator
-upgrades.absorption_field_generator.desc,Like any gear but way smaller. (really really really small).
+upgrades.absorption_field_generator.desc,Generates a powerful magnetic field that will absorb (most of) all impacts. 
