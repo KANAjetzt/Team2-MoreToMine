@@ -11,8 +11,8 @@ func init(archetype:MapArchetype, randSeed):
 
 	var globals: Team2Globals = team_2_mod_node.globals
 
-
 	adjust_archetype_values("water_rate", globals.water_spawn_rate_multiplier)
+	adjust_archetype_values("cobalt_rate", globals.cobalt_spawn_rate_multiplier)
 	adjust_archetype_values("iron_cluster_rate", globals.iron_cluster_rate_multiplier)
 	adjust_archetype_values("iron_cluster_size_base", globals.iron_cluster_size_base_multiplier)
 	adjust_archetype_values("iron_cluster_size_per_y", globals.iron_cluster_size_per_y_multiplier)
