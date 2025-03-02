@@ -39,12 +39,13 @@ func init():
 		label.text = str(0)
 		gContainer.add_child(label)
 
-	Data.listen(self, "inventory.copper")
-	Data.listen(self, "inventory.tungsten")
-	Data.listen(self, "inventory.quartz")
-	Data.listen(self, "inventory.ruby")
-	Data.listen(self, "inventory.ionic_dust")
-	Data.listen(self, "inventory.cryoflux")
+	Data.listen(self, "inventory.copper", true)
+	Data.listen(self, "inventory.tungsten", true)
+	Data.listen(self, "inventory.quartz", true)
+	Data.listen(self, "inventory.ruby", true)
+	Data.listen(self, "inventory.ionic_dust", true)
+	Data.listen(self, "inventory.cryoflux", true)
+
 
 func propertyChanged(property:String, oldValue, newValue):
 	match property:
@@ -89,7 +90,7 @@ func propertyChanged(property:String, oldValue, newValue):
 func updateSize():
 	super.updateSize()
 
-	var label_copper = $GridContainer/LabelCopper
+	var label_copper = get_node_or_null("GridContainer/LabelCopper")
 	var width_default = 5
 	var width_extended = 6
 
