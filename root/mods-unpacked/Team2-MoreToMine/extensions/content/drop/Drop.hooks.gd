@@ -8,7 +8,7 @@ func _physics_process(chain: ModLoaderHookChain, delta) -> void:
 	if not ref.get("data"):
 		return
 
-	if not ref.isCarried() and ref.data.reverse_gravity:
+	if not ref.isCarried() and not ref.dropTargetRef and ref.data.reverse_gravity:
 		ref.apply_central_force(Vector2(0, -ref.data.reverse_gravity_strength))
 
 
