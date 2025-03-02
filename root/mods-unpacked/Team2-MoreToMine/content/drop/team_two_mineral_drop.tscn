@@ -14,7 +14,6 @@ physics_material_override = SubResource("PhysicsMaterial_74p4i")
 script = ExtResource("2_pdswt")
 data = null
 hasInterDropCollisionSound = false
-carryableType = ""
 
 [node name="Sprite2D" parent="." index="0" groups=["unstyled"]]
 material = null
