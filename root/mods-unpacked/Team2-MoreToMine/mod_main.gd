@@ -23,7 +23,11 @@ func _init() -> void:
 	# Add translations
 	add_translations()
 
-	# TODO: Load fixed hooked vanilla scripts here
+	# We are shipping a fixed, hooked version of Dome.gd.
+	# To prevent the unfixed version from loading if the mod is disabled,
+	# we erase the script path from `ModLoaderStore.hooked_script_paths`
+	# to stop the ModLoader from creating a hook for it.
+	ModLoaderStore.hooked_script_paths.erase("res://content/dome/Dome.gd")
 
 
 func install_script_extensions() -> void:
