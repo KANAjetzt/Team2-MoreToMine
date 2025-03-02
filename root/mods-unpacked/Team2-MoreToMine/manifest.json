@@ -1,6 +1,6 @@
 {
 	"dependencies": [],
-	"description": "Created for the Dome Keeper 2025 Mod Jam!  \n\nWant more resources?  \nMore complicated upgrades?  \nCrafting?  \nWe have it all!  \n\nThis mod adds new resources, crafting, and changes the upgrade tree for the Laser Weapon.  \nHave fun!  \n\nNote: This mod will be incompatible with most mods that add resources as well.",
+	"description": "Created for the Dome Keeper 2025 Mod Jam!  \n\nWant more resources?  \nMore complicated upgrades?  \nCrafting?  \nWe have it all!  \n\nThis mod adds new resources, crafting, and changes the upgrade tree for the Laser Weapon.  \nHave fun!  \n\nNote: This mod will be incompatible with mods that also add resources.",
 	"extra": {
 		"godot": {
 			"authors": [
@@ -32,5 +32,5 @@
 	"name": "MoreToMine",
 	"namespace": "Team2",
 	"version_number": "1.0.1",
-	"website_url": ""
+	"website_url": "https://github.com/KANAjetzt/Team2-MoreToMine"
 }
