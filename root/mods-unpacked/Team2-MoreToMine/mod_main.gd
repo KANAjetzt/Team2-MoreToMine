@@ -38,6 +38,7 @@ func install_script_extensions() -> void:
 	ModLoaderMod.install_script_extension(extensions_dir_path.path_join("content/hud/inventory/Inventory.gd"))
 	ModLoaderMod.install_script_extension(extensions_dir_path.path_join("content/techtree/Tech2.gd"))
 	ModLoaderMod.install_script_extension(extensions_dir_path.path_join("content/techtree/TechTreePopup.gd"))
+	ModLoaderMod.install_script_extension(extensions_dir_path.path_join("content/gadgets/droneyard/Squidley.gd"))
 
 
 func install_script_hook_files() -> void:
@@ -47,6 +48,7 @@ func install_script_hook_files() -> void:
 	ModLoaderMod.install_script_hooks("res://content/map/tile/Tile.gd", extensions_dir_path.path_join("content/map/tile/Tile.hooks.gd"))
 	ModLoaderMod.install_script_hooks("res://content/dome/Dome.gd", extensions_dir_path.path_join("content/dome/Dome.hooks.gd"))
 	ModLoaderMod.install_script_hooks("res://content/drop/Drop.gd", extensions_dir_path.path_join("content/drop/Drop.hooks.gd"))
+	ModLoaderMod.install_script_hooks("res://content/gadgets/droneyard/TransportDrone.gd", extensions_dir_path.path_join("content/gadgets/droneyard/TransportDrone.hooks.gd"))
 
 
 func add_translations() -> void:
