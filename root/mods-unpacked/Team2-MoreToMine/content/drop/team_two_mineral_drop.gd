@@ -22,5 +22,5 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	super._physics_process(delta)
 
-	if not isCarried() and not dropTargetRef and data.reverse_gravity:
+	if not dropTargetRef and data.reverse_gravity:
 		apply_central_force(Vector2(0, -data.reverse_gravity_strength))
