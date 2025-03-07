@@ -40,6 +40,7 @@ func install_script_extensions() -> void:
 	ModLoaderMod.install_script_extension(extensions_dir_path.path_join("content/techtree/TechTreePopup.gd"))
 	ModLoaderMod.install_script_extension(extensions_dir_path.path_join("content/gadgets/droneyard/Squidley.gd"))
 	ModLoaderMod.install_script_extension(extensions_dir_path.path_join("content/gadgets/teleporter/Teleporter.gd"))
+	ModLoaderMod.install_script_extension(extensions_dir_path.path_join("content/gadgets/ressourcepacker/ResourcePackerEffect.gd"))
 
 
 func install_script_hook_files() -> void:
