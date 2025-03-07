@@ -47,7 +47,6 @@ func install_script_hook_files() -> void:
 	ModLoaderMod.install_script_hooks("res://content/map/MapData.gd", extensions_dir_path.path_join("content/map/MapData.hooks.gd"))
 	ModLoaderMod.install_script_hooks("res://content/map/tile/Tile.gd", extensions_dir_path.path_join("content/map/tile/Tile.hooks.gd"))
 	ModLoaderMod.install_script_hooks("res://content/dome/Dome.gd", extensions_dir_path.path_join("content/dome/Dome.hooks.gd"))
-	ModLoaderMod.install_script_hooks("res://content/drop/Drop.gd", extensions_dir_path.path_join("content/drop/Drop.hooks.gd"))
 	ModLoaderMod.install_script_hooks("res://content/gadgets/droneyard/TransportDrone.gd", extensions_dir_path.path_join("content/gadgets/droneyard/TransportDrone.hooks.gd"))
 
 

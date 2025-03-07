@@ -16,3 +16,11 @@ func _ready() -> void:
 	carry_sprite.texture = data.texture_carry
 	focus_sprite.texture = data.texture_focus
 	mass = data.mass
+	additionalSlowdown = data.additional_slowdown
+
+
+func _physics_process(delta: float) -> void:
+	super._physics_process(delta)
+
+	if not isCarried() and not dropTargetRef and data.reverse_gravity:
+		apply_central_force(Vector2(0, -data.reverse_gravity_strength))

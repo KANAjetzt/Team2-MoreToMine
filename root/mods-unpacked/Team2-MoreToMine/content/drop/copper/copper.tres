@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Team2ResourceData" load_steps=5 format=3 uid="uid://bbe8k5wpm5brj"]
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://bbe8k5wpm5brj"]
 
 [ext_resource type="Script" path="res://mods-unpacked/Team2-MoreToMine/data/_scripts/resource.gd" id="1_1j5q6"]
 [ext_resource type="Texture2D" uid="uid://cby3gpx2efqid" path="res://mods-unpacked/Team2-MoreToMine/content/drop/copper/copper_smol.png" id="2_66c1f"]
@@ -23,6 +23,7 @@ spawn_per_layer_max = 3
 reverse_gravity = false
 reverse_gravity_strength = 100.0
 mass = 1.0
+additional_slowdown = 0.0
 increase_speed_los_per_carry = false
 increase_speed_los_per_carry_amount = 0.5
 hardness_multiplier = 1.0
