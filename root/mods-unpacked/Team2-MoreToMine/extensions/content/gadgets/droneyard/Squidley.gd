@@ -8,7 +8,7 @@ extends "res://content/gadgets/droneyard/Squidley.gd"
 func setCarriedResource(res:String):
 	for resource in team_2_globals.resources:
 		if resource.type == res:
-			$CarriedResource.texture = load(resource.texture)
+			$CarriedResource.texture = resource.texture
 			$Sprite2D.play("idle")
 			$PickupSound.play()
 			break
