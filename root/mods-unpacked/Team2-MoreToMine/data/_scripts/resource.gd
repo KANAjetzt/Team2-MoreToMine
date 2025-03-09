@@ -39,6 +39,10 @@ extends Resource
 ## Example: 0.5 = will stop spawning at half of the maps depth.
 @export_range(0.0, 1.0) var spawn_depth_max_multiplier := 1.0
 
+## The ammount of waves required for the resource to be dropped
+## by the mineral tree.
+@export var mineral_tree_cycles_to_grow := 1
+
 @export_group("Clustor Settings")
 @export var spawn_as_cluster := false
 @export var cluster_rate := 10.0
